@@ -19,6 +19,9 @@ Mod source/
 # Toolkit (external dependency, gitignored per user preference)
 spookys-automod-toolkit/
 
+# SkyrimNet workflows (separate directory, not part of this mod)
+Skyrimnet workflows/
+
 # OS files
 Thumbs.db
 .DS_Store
