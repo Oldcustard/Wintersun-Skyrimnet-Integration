@@ -1,0 +1,31 @@
+# NOT WORKING — SkyrimNet does not detect Tenet effects via active_effect events.
+# Papyrus-side fix planned for future release. Excluded from packages until fixed.
+
+name: "wintersun_deity_abandonment_narration"
+description: "Narration when a Wintersun deity abandons the player due to loss of favour"
+
+eventCriteria:
+  eventType: "active_effect"
+  schemaConditions:
+    - fieldPath: "effect_editor_id"
+      operator: "contains"
+      value: "_Tenets_Effect_Ab"
+      caseSensitive: false
+    - fieldPath: "action"
+      operator: "equals"
+      value: "removed"
+
+response:
+  type: "direct_narration"
+  content: >-
+    {% set favor = get_global_value("WSN_Favor_Global") %}
+    {% if favor <= 0 %}
+    {% set deity = event_json.effect | replace("Tenets of ", "") %}
+    *{{ deity }} has turned away from {{ player_name }}. Their divine connection is severed, their prayers left unanswered.*
+    {% endif %}
+
+audience: "nearby_npcs"
+enabled: true
+probability: 1.0
+cooldownSeconds: 30
+priority: 2

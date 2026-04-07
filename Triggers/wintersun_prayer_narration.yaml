@@ -1,0 +1,27 @@
+name: "wintersun_prayer_narration"
+description: "Narration when player kneels to pray via Wintersun"
+
+eventCriteria:
+  eventType: "active_effect"
+  schemaConditions:
+    - fieldPath: "effect_editor_id"
+      operator: "equals"
+      value: "WSN_Prayer_Effect"
+      caseSensitive: false
+    - fieldPath: "action"
+      operator: "equals"
+      value: "applied"
+
+response:
+  type: "direct_narration"
+  content: >-
+    {% set worshipID = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WorshipID") %}
+    {% set deityNames = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WSN_DeityName") %}
+    {% set deityName = at(deityNames, worshipID) %}
+    {% if deityName %}*{{ player_name }} kneels and closes their eyes, lips moving in silent prayer to {{ deityName }}.*{% else %}*{{ player_name }} kneels and closes their eyes, lips moving in silent prayer.*{% endif %}
+
+audience: "nearby_npcs"
+enabled: true
+probability: 1.0
+cooldownSeconds: 0
+priority: 1

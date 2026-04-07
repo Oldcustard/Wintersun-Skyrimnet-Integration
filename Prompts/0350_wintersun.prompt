@@ -1,0 +1,18 @@
+{# Wintersun - Faiths of Skyrim Integration - Religious Affiliation #}
+{% set first_person = (render_mode == "transform" or render_mode == "full" or render_mode == "thoughts") %}
+{% if first_person %}
+{% if is_player(actorUUID) %}
+{% if is_plugin_loaded("Wintersun - Faiths of Skyrim.esp") %}
+{% set wsnWorshipID = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WorshipID") %}
+{% if wsnWorshipID != -1 %}
+{% set actor = decnpc(actorUUID) %}
+{% set wsnIsFavored = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "IsFavored") %}
+{% set wsnDeityNames = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WSN_DeityName") %}
+{% set wsnDeityName = at(wsnDeityNames, wsnWorshipID) %}
+
+## Religion
+{{ actor.name }} worships {{ wsnDeityName }}. {{ actor.subjectivePronoun | capitalize }} is {% if wsnIsFavored %}a Devotee, having earned full divine favour{% else %}a Follower, still working to earn {{ wsnDeityName }}'s favour{% endif %}.
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}

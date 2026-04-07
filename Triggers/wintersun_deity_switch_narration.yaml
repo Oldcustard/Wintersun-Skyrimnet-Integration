@@ -1,0 +1,32 @@
+# NOT WORKING — SkyrimNet does not detect Tenet effects via active_effect events.
+# Papyrus-side fix planned for future release. Excluded from packages until fixed.
+
+name: "wintersun_deity_switch_narration"
+description: "Narration when player switches from one Wintersun deity to another"
+
+eventCriteria:
+  eventType: "active_effect"
+  schemaConditions:
+    - fieldPath: "effect_editor_id"
+      operator: "contains"
+      value: "_Tenets_Effect_Ab"
+      caseSensitive: false
+    - fieldPath: "action"
+      operator: "equals"
+      value: "applied"
+
+response:
+  type: "direct_narration"
+  content: >-
+    {% set worshipID = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WorshipID") %}
+    {% if worshipID != -1 %}
+    {% set deityNames = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WSN_DeityName") %}
+    {% set newDeity = at(deityNames, worshipID) %}
+    *{{ player_name }} has turned from their former faith and pledged their devotion to {{ newDeity }}.*
+    {% endif %}
+
+audience: "nearby_npcs"
+enabled: true
+probability: 1.0
+cooldownSeconds: 0
+priority: 1

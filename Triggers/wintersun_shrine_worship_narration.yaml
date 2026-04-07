@@ -1,0 +1,23 @@
+name: "wintersun_shrine_worship_narration"
+description: "Narration when player worships at a Wintersun shrine"
+
+eventCriteria:
+  eventType: "active_effect"
+  schemaConditions:
+    - fieldPath: "effect_editor_id"
+      operator: "starts_with"
+      value: "WSN_Shrine_Effect_WorshipRequest"
+      caseSensitive: false
+    - fieldPath: "action"
+      operator: "equals"
+      value: "applied"
+
+response:
+  type: "direct_narration"
+  content: "*{{ player_name }} approaches the shrine and bows their head in reverence to {{ event_json.effect | replace(\"Do you want to worship \", \"\") | replace(\"?\", \"\") }}.*"
+
+audience: "nearby_npcs"
+enabled: true
+probability: 1.0
+cooldownSeconds: 0
+priority: 1
