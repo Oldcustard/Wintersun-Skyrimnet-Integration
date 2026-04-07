@@ -6,10 +6,6 @@ The deity virtual NPC prompt (`wsn_deity_virtual.prompt`) has 52 if/elsif blocks
 
 Goal: (1) establish reference as master documentation, (2) store per-deity voice types, (3) architecture for injecting deity data (tenets, persona) into the prompt via Papyrus arrays instead of the if/elif chain.
 
-### Prerequisite Bug
-
-The prompt uses `elsif` throughout, but SkyrimNet's Inja engine requires `elif`. This is a **separate task** to fix before this work begins.
-
 ## Architecture: Three-Layer System
 
 ```
@@ -85,7 +81,11 @@ Keep your responses brief and divine in tone...
 
 This shrinks the prompt from ~116 lines to ~20 lines.
 
-## Implementation: Phase 1 (This Task)
+## Implementation: Phase 1 — COMPLETED
+
+Voice types implemented in Papyrus code (`InitDeityVoices()` in `WSN_SkyrimNet_QuestScript.psc`) rather than ESP properties. The voice array is indexed by worshipID (0–51) and initialized on quest startup. Per-deity voice is applied at initial NPC registration only; HandlePrayerStart() passes "" to preserve player WebUI customization.
+
+Reference file `wintersun_deities.md` updated with Voice Type field and worshipID index for all 52 deities. Deity order extracted from Wintersun ESP binary (WSN_DeityName array).
 
 ### Voice Type Group Defaults
 

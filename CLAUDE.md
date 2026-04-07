@@ -77,7 +77,7 @@ When the player prays as a Devotee, their deity becomes a conversable virtual NP
 2. **NPC activation**: `WSN_SkyrimNet_QuestScript.HandlePrayerStart()` looks up the deity name via `wsn_trackerquest_quest`, calls `UpdateVirtualNPC` (blank params = keep current), then `EnableVirtualNPC`
 3. **Prayer end**: 5-second polling via `RegisterForSingleUpdate` — checks `HasMagicEffect` on the player
 4. **Deity persona prompt** (`wsn_deity_virtual.prompt`) — **BROKEN, excluded from packages**. 52 deity-specific if/elif blocks exist but personality formatting is not working correctly. Fix planned.
-5. **Voice**: `DeityVoiceID` property defaults to `"malesoldier"`; `UpdateVirtualNPC` passes `""` for optional params to preserve player-customized voice (SkyrimNet treats blank as "keep current")
+5. **Voice**: `WSN_DeityVoiceID` String[] (indexed by worshipID 0–51) provides per-deity default voice types, initialized in `InitDeityVoices()`. `DeityVoiceID` is the global fallback. Per-deity voice is only applied at initial registration; `HandlePrayerStart()` passes `""` to preserve player WebUI customization. Voice type reference: `wintersun_deities.md`
 
 ### SkyrimNet Trigger YAMLs
 

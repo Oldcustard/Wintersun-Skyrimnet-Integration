@@ -11,7 +11,11 @@ Scriptname WSN_SkyrimNet_QuestScript Extends Quest
 ; is no "effect removed" event in PO3.
 ;
 ; Voice configuration:
-;   DeityVoiceID defaults to "malesoldier".
+;   WSN_DeityVoiceID is a String[] indexed by worshipID (0-51), providing
+;   per-deity default voice types. DeityVoiceID is the fallback when the
+;   array is empty or the deity's entry is blank.
+;   Per-deity voice is only applied at initial registration. HandlePrayerStart
+;   passes "" to preserve player-customized voices from the SkyrimNet WebUI.
 ;
 ; Debug:
 ;   bDebugMode = True logs every event to screen + Papyrus log.
@@ -19,7 +23,8 @@ Scriptname WSN_SkyrimNet_QuestScript Extends Quest
 
 String VIRTUAL_NPC_NAME = "wsn_deity"
 
-String Property DeityVoiceID = "malesoldier" Auto
+String Property DeityVoiceID = "MaleSoldier" Auto
+String[] WSN_DeityVoiceID
 Bool Property bDebugMode = False Auto
 Bool Property bInitialized = False Auto Hidden
 Bool Property bPrayerActive = False Auto Hidden
@@ -29,6 +34,7 @@ Bool Property bPrayerActive = False Auto Hidden
 ; ---------------------------------------------------------------------------
 
 Event OnInit()
+    InitDeityVoices()
     RegisterForSingleUpdate(3.0)
 EndEvent
 
@@ -119,18 +125,88 @@ EndFunction
 Function RegisterOrUpdateVirtualNPC()
     wsn_trackerquest_quest tracker = GetTracker()
     String deityName = ""
+    String deityVoice = DeityVoiceID  ; fallback global default
 
     If tracker != None && tracker.worshipID != -1
         deityName = tracker.WSN_DeityName[tracker.worshipID]
+        Int wid = tracker.worshipID
+        If wid >= 0 && wid < WSN_DeityVoiceID.Length
+            String perDeityVoice = WSN_DeityVoiceID[wid]
+            If perDeityVoice != ""
+                deityVoice = perDeityVoice
+            EndIf
+        EndIf
     EndIf
 
     If deityName == ""
         deityName = "Unknown Deity"
     EndIf
 
-    DBG("RegisterVirtualNPC: name=" + deityName + " voice=" + DeityVoiceID)
-    SkyrimNetApi.RegisterVirtualNPC(VIRTUAL_NPC_NAME, deityName, DeityVoiceID, "private", "")
+    DBG("RegisterVirtualNPC: name=" + deityName + " voice=" + deityVoice)
+    SkyrimNetApi.RegisterVirtualNPC(VIRTUAL_NPC_NAME, deityName, deityVoice, "private", "")
     SkyrimNetApi.DisableVirtualNPC(VIRTUAL_NPC_NAME)
+EndFunction
+
+; ---------------------------------------------------------------------------
+; Voice initialization — indexed by worshipID (0-51)
+; Order must match WSN_DeityName in wsn_trackerquest_quest
+; ---------------------------------------------------------------------------
+
+Function InitDeityVoices()
+    WSN_DeityVoiceID = New String[52]
+    WSN_DeityVoiceID[0]  = "MaleEvenToned"       ; Julianos
+    WSN_DeityVoiceID[1]  = "MaleElfHaughty"       ; Syrabane
+    WSN_DeityVoiceID[2]  = "MaleElfHaughty"       ; Magnus
+    WSN_DeityVoiceID[3]  = "MaleElfHaughty"       ; Jephre
+    WSN_DeityVoiceID[4]  = "FemaleOldKindly"      ; Mara
+    WSN_DeityVoiceID[5]  = "FemaleCommander"      ; Meridia
+    WSN_DeityVoiceID[6]  = "FemaleSultry"         ; Azura
+    WSN_DeityVoiceID[7]  = "MaleCommander"        ; Talos
+    WSN_DeityVoiceID[8]  = "MaleOldKindly"        ; Akatosh
+    WSN_DeityVoiceID[9]  = "FemaleSultry"         ; Dibella
+    WSN_DeityVoiceID[10] = "MaleElfHaughty"       ; Phynaster
+    WSN_DeityVoiceID[11] = "MaleBrute"            ; Mehrunes Dagon
+    WSN_DeityVoiceID[12] = "FemaleCondescending"  ; Vaermina
+    WSN_DeityVoiceID[13] = "MaleCommoner"         ; Zenithar
+    WSN_DeityVoiceID[14] = "MaleCondescending"    ; Boethiah
+    WSN_DeityVoiceID[15] = "FemaleSultry"         ; Nocturnal
+    WSN_DeityVoiceID[16] = "MaleCondescending"    ; Molag Bal
+    WSN_DeityVoiceID[17] = "FemaleEvenToned"      ; Kynareth
+    WSN_DeityVoiceID[18] = "FemaleSultry"         ; Mephala
+    WSN_DeityVoiceID[19] = "MaleOldKindly"        ; Arkay
+    WSN_DeityVoiceID[20] = "MaleDrunk"            ; Sanguine
+    WSN_DeityVoiceID[21] = "MaleOrc"              ; Malacath
+    WSN_DeityVoiceID[22] = "MaleCommander"        ; Stendarr
+    WSN_DeityVoiceID[23] = "MaleElfHaughty"       ; Auriel
+    WSN_DeityVoiceID[24] = "MaleSlyCynical"       ; Peryite
+    WSN_DeityVoiceID[25] = "MaleNord"             ; Hircine
+    WSN_DeityVoiceID[26] = "MaleElfHaughty"       ; Xarxes
+    WSN_DeityVoiceID[27] = "MaleNordCommander"    ; Shor
+    WSN_DeityVoiceID[28] = "MaleOldGrumpy"        ; Hermaeus Mora
+    WSN_DeityVoiceID[29] = "MaleSlyCynical"       ; Clavicus Vile
+    WSN_DeityVoiceID[30] = "FemaleOldGrumpy"      ; Namira
+    WSN_DeityVoiceID[31] = "MaleEvenToned"        ; Jyggalag
+    WSN_DeityVoiceID[32] = "MaleElfHaughty"       ; Trinimac
+    WSN_DeityVoiceID[33] = "MaleWarlock"          ; Sheogorath
+    WSN_DeityVoiceID[34] = "MaleUniqueGhost"      ; Sithis
+    WSN_DeityVoiceID[35] = "MaleCommoner"         ; Z'en
+    WSN_DeityVoiceID[36] = "MaleBrute"            ; Satakal
+    WSN_DeityVoiceID[37] = "MaleOldKindly"        ; Tall Papa
+    WSN_DeityVoiceID[38] = "MaleCommander"        ; the HoonDing
+    WSN_DeityVoiceID[39] = "MaleYoungEager"       ; Sai
+    WSN_DeityVoiceID[40] = "MaleNord"             ; the Animal Gods
+    WSN_DeityVoiceID[41] = "MaleSlyCynical"       ; Baan Dar
+    WSN_DeityVoiceID[42] = "MaleCommander"        ; Ebonarm
+    WSN_DeityVoiceID[43] = "MaleKhajiit"          ; Rajhin
+    WSN_DeityVoiceID[44] = "MaleKhajiit"          ; Riddle'Thar
+    WSN_DeityVoiceID[45] = "FemaleOldKindly"      ; Morwha
+    WSN_DeityVoiceID[46] = "FemaleCommander"      ; Leki
+    WSN_DeityVoiceID[47] = "MaleUniqueGhost"      ; the Hist
+    WSN_DeityVoiceID[48] = "FemaleEvenToned"      ; St. Alessia
+    WSN_DeityVoiceID[49] = "MaleWarlock"          ; Mannimarco
+    WSN_DeityVoiceID[50] = "MaleOldGrumpy"        ; the All-Maker
+    WSN_DeityVoiceID[51] = "FemaleEvenToned"      ; the Magna-Ge
+    DBG("InitDeityVoices: initialized 52 voice types")
 EndFunction
 
 ; ---------------------------------------------------------------------------
