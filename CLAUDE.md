@@ -110,7 +110,7 @@ The plugin (`WSN_SkyrimNet_Integration.esp`) is ESL-flagged (`0x200` header flag
 ## Plans
 
 - `.claude/plans/deity-personality-database.md` — Deity personality database architecture (three-layer system: reference → Papyrus arrays → prompt template)
-- `.claude/plans/release-workflow.md` — Version release workflow (debug disable, changelog, packaging, Discord posts)
+- `.claude/plans/release-workflow.md` — Version release workflow (debug disable, changelog, packaging, GitHub release)
 
 ## Documentation
 
