@@ -1,68 +1,56 @@
 # Wintersun – SkyrimNet Integration
 
-SkyrimNet integration for **Wintersun – Faiths of Skyrim**. Narrates your character's religious life and brings your deity to life during prayer.
+SkyrimNet integration for [Wintersun – Faiths of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/22506). Narrates your character's religious life and brings your deity to life during prayer.
 
-## Known Issues
+## Features
 
-- **Deity persona prompt not applied** — A current SkyrimNet issue causes save-specific bios to override custom character prompts with blank content. Deities will speak without their unique personality until this is fixed upstream.
-
----
-
-## What it does
-
-**Prayer narration**
+### Prayer narration
 When you kneel to pray, nearby NPCs hear a narration referencing your deity:
 > *{player} kneels and closes their eyes, lips moving in silent prayer to Stendarr.*
 
 Falls back to a generic line if no deity is chosen.
 
-**Shrine worship narration**
+### Shrine worship narration
 When you interact with a Wintersun shrine, nearby NPCs hear:
 > *{player} approaches the shrine and bows their head in reverence to Talos.*
 
-**Character bio — Religious Affiliation**
-The SkyrimNet character bio includes your deity and rank:
+### Character bio
+The SkyrimNet character profile includes your deity and rank:
 > {player} worships Stendarr. He is a Devotee, having earned full divine favour.
 
-**Deity virtual NPC — Commune during prayer**
-When you pray as a Devotee, your deity becomes available as a conversation partner for the duration of the prayer. Speak with them directly. Each deity has a unique default voice type. Works for all 52 deities in Wintersun.
-
----
+### Deity virtual NPC
+When you pray, your deity becomes available as a conversation partner for the duration of the prayer. Each of the 52 Wintersun deities has a unique default voice type and personality prompt. Configurable via the SkyrimNet WebUI.
 
 ## Requirements
 
 - [Wintersun – Faiths of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/22506)
-- SkyrimNet (with custom triggers support)
-- Skyrim Script Extender (SKSE)
+- SkyrimNet
+- SKSE
 - [PO3 Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854)
-
----
 
 ## Installation
 
 Install with a mod manager (MO2 / Vortex), or extract directly into your `Skyrim Special Edition/Data/` folder. Enable `WSN_SkyrimNet_Integration.esp` in your load order. The plugin is ESL-flagged and does not consume a load order slot.
 
----
+## Configuration
 
-## Deity voice configuration
+Settings are available in the SkyrimNet WebUI under the **Wintersun Integration** plugin:
 
-Each deity has a unique default voice type (e.g. Meridia uses `FemaleUniqueMeridia`, Sheogorath uses `MaleUniqueSheogorath`). You can override all deity voices with a single voice type through the **SkyrimNet WebUI** — find the "Voice Type Override" setting under the Wintersun Integration plugin.
+| Setting | Description |
+|---|---|
+| **Voice Type Override** | Override all deity voices with a single voice type (e.g. `MaleEvenToned`). Leave empty to use per-deity defaults. |
+| **Require Devotee Status** | When enabled, the deity virtual NPC only activates for Devotees. Disable to allow all worshippers to commune. Default: on. |
+| **Debug Mode** | Show in-game debug notifications. For troubleshooting only. Default: off. |
 
----
+## Known Issues
 
-## Notes
+**Deity persona prompt not applied** — A SkyrimNet issue causes save-specific bios to override mod-provided character prompts with blank content, so deities speak without unique personality for now.
 
-- The deity virtual NPC only activates during prayer and only when you are a **Devotee** (full favour). Followers cannot commune directly with their deity.
+> **Workaround:** Copy `wsn_deity_virtual.prompt` from `SKSE/Plugins/SkyrimNet/prompts/characters/` into `SKSE/Plugins/SkyrimNet/prompts/_saves/<your_save_id>/characters/`. Your save ID is the folder name inside `_saves/`.
 
----
+## Planned
 
-## Planned features
-
-- Deity switching narration — narrate when the player accepts a new deity at a shrine
-- Deity abandonment narration — narrate when a deity casts the player out for lost favour
-- Deity-specific personalities and speech styles (52 unique personas) — prompt ready, awaiting SkyrimNet fix
-- Expanded deity lore and tenets for richer roleplay
+- Deity switching and abandonment narration
+- Option to commune with non-followed deities at their shrines
 - SkyrimNet actions to increase/decrease deity favour
-- Option to commune with non-followed deities when interacting with their shrines
-
-Please feel free to leave any suggestions and feedback.
+- Expanded deity lore and tenets for richer prayer dialogue
