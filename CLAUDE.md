@@ -71,7 +71,7 @@ Alias scripts are **not** stored on `QuestAlias` objects directly — they live 
 
 ### Virtual NPC Prayer System
 
-When the player prays as a Devotee, their deity becomes a conversable virtual NPC:
+When the player prays (as a Devotee by default, configurable via `require_devotee`), their deity becomes a conversable virtual NPC:
 
 1. **Prayer detection**: `WSN_SkyrimNet_PlayerAliasScript` uses PO3 Papyrus Extender's alias-based `OnMagicEffectApplyEx` to detect the Wintersun prayer effect
 2. **NPC activation**: `WSN_SkyrimNet_QuestScript.HandlePrayerStart()` looks up the deity name via `wsn_trackerquest_quest`, calls `UpdateVirtualNPC` with resolved voice, then `EnableVirtualNPC`

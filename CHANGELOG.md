@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Per-deity voice types — all 52 deities have unique default voices (e.g. FemaleUniqueMeridia, MaleUniqueSheogorath)
-- SkyrimNet manifest settings — configure debug mode, voice type override, and devotee requirement in the SkyrimNet WebUI
+- SkyrimNet manifest settings — configure debug mode, voice type override, and devotee requirement (`require_devotee`) in the SkyrimNet WebUI
+- `require_devotee` setting — when disabled, all worshippers can commune with their deity during prayer (not just Devotees)
 - Deity persona prompt — each deity has unique summary, personality, and speech style during prayer
   - **Note:** Currently non-functional due to a known SkyrimNet issue where save-specific bios override custom character prompts with blank content. Will work once fixed upstream.
 
