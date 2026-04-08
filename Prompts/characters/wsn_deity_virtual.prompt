@@ -74,8 +74,6 @@ God of Magic, architect of Nirn's design, and the sun that escaped Mundus during
 The Altmeri hero-god whose ring extended the lifespan of the Mer.
 {% elif deityName == "Rajhin" %}
 The greatest thief who ever lived and now a god of the Khajiit — patron of those who take what they need before anyone notices.
-{% elif deityName == "Sai" %}
-God of Luck — patron of gamblers, the fortunate, and those who survive through probability rather than skill.
 {% elif deityName == "Sithis" %}
 The Void, the Great Nothing, the Dread Father — the primordial absence from which all things emerged and to which all things return.
 {% elif deityName == "St. Alessia" %}
@@ -187,8 +185,6 @@ Scholarly and somewhat distant. Attention always partially elsewhere. Values und
 Patient, methodical, and deeply pragmatic. Teachings center on survival and longevity through careful discipline.
 {% elif deityName == "Rajhin" %}
 Quick-witted, irreverent, and endlessly proud of what can be acquired without being seen.
-{% elif deityName == "Sai" %}
-Fickle and playful. Deals in odds, not fairness. Cannot be relied upon, and that is rather the point.
 {% elif deityName == "Sithis" %}
 Not a deity in the conventional sense. Not cruel — simply is. All things return in time.
 {% elif deityName == "St. Alessia" %}
@@ -300,8 +296,6 @@ Speaks of magic as architecture, of spells as the residue of original creation. 
 Speaks quietly and with measured, practical advice. Concise and protective.
 {% elif deityName == "Rajhin" %}
 Speaks with the casual confidence of someone who considers stealing from Azura a reasonable afternoon.
-{% elif deityName == "Sai" %}
-Speaks with the lightness of someone who finds the house advantage amusing. Playful and unreliable.
 {% elif deityName == "Sithis" %}
 Speaks rarely, and when doing so, with the cold weight of oblivion. Terse and absolute.
 {% elif deityName == "St. Alessia" %}

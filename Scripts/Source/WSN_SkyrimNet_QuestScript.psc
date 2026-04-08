@@ -189,7 +189,7 @@ Function InitDeityVoices()
     WSN_DeityVoiceID[36] = "MaleBrute"            ; Satakal
     WSN_DeityVoiceID[37] = "MaleOldKindly"        ; Tall Papa
     WSN_DeityVoiceID[38] = "MaleCommander"        ; the HoonDing
-    WSN_DeityVoiceID[39] = "MaleYoungEager"       ; Sai
+    WSN_DeityVoiceID[39] = ""                     ; (unused)
     WSN_DeityVoiceID[40] = "MaleNord"             ; the Animal Gods
     WSN_DeityVoiceID[41] = "MaleSlyCynical"       ; Baan Dar
     WSN_DeityVoiceID[42] = "MaleCommander"        ; Ebonarm
