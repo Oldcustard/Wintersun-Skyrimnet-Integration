@@ -1,0 +1,28 @@
+plugin:
+  name: "Wintersun Integration"
+  version: "2.1.0"
+  description: "Wintersun deity virtual NPC settings"
+  icon: "🙏"
+
+schema:
+  fields:
+    - name: "Debug Mode"
+      path: "debug.enabled"
+      type: "bool"
+      description: "Show debug notifications in-game. For troubleshooting only."
+      defaultValue: false
+      category: "Debug"
+
+    - name: "Voice Type Override"
+      path: "voice.override"
+      type: "string"
+      description: "Override all deity voice types with this EditorID (e.g. MaleEvenToned). Leave empty to use per-deity defaults."
+      defaultValue: ""
+      category: "Voice"
+
+    - name: "Require Devotee Status"
+      path: "require_devotee"
+      type: "bool"
+      description: "If enabled, the deity virtual NPC only activates when the player is a Devotee. If disabled, all worshippers can commune with their deity during prayer."
+      defaultValue: true
+      category: "Behaviour"

@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-04-07
+
+### Added
+
+- Per-deity voice types — all 52 deities have unique default voices (e.g. FemaleUniqueMeridia, MaleUniqueSheogorath)
+- SkyrimNet manifest settings — configure debug mode, voice type override, and devotee requirement in the SkyrimNet WebUI
+- Deity persona prompt — each deity has unique summary, personality, and speech style during prayer
+  - **Note:** Currently non-functional due to a known SkyrimNet issue where save-specific bios override custom character prompts with blank content. Will work once fixed upstream.
+
+### Fixed
+
+- Deity voice now updates correctly when switching deities during prayer
+- Voice type array initializes on existing save games (not just new games)
+- Debug mode no longer defaults to True on fresh install — controlled via manifest setting
+
 ## [2.0.0] - 2026-04-06
 
 ### Added

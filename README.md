@@ -2,6 +2,10 @@
 
 SkyrimNet integration for **Wintersun – Faiths of Skyrim**. Narrates your character's religious life and brings your deity to life during prayer.
 
+## Known Issues
+
+- **Deity persona prompt not applied** — A current SkyrimNet issue causes save-specific bios to override custom character prompts with blank content. Deities will speak without their unique personality until this is fixed upstream.
+
 ---
 
 ## What it does
@@ -21,9 +25,7 @@ The SkyrimNet character bio includes your deity and rank:
 > {player} worships Stendarr. He is a Devotee, having earned full divine favour.
 
 **Deity virtual NPC — Commune during prayer**
-When you pray as a Devotee, your deity becomes available as a conversation partner for the duration of the prayer. Speak with them directly.
-
-Works for all 52 deities in Wintersun.
+When you pray as a Devotee, your deity becomes available as a conversation partner for the duration of the prayer. Speak with them directly. Each deity has a unique default voice type. Works for all 52 deities in Wintersun.
 
 ---
 
@@ -44,7 +46,7 @@ Install with a mod manager (MO2 / Vortex), or extract directly into your `Skyrim
 
 ## Deity voice configuration
 
-The deity virtual NPC defaults to the **Male Soldier** voice type (`malesoldier`). You can change the voice through the **SkyrimNet WebUI** — find the `wsn_deity` virtual NPC and update its voice setting. The change persists across prayer sessions.
+Each deity has a unique default voice type (e.g. Meridia uses `FemaleUniqueMeridia`, Sheogorath uses `MaleUniqueSheogorath`). You can override all deity voices with a single voice type through the **SkyrimNet WebUI** — find the "Voice Type Override" setting under the Wintersun Integration plugin.
 
 ---
 
@@ -58,10 +60,9 @@ The deity virtual NPC defaults to the **Male Soldier** voice type (`malesoldier`
 
 - Deity switching narration — narrate when the player accepts a new deity at a shrine
 - Deity abandonment narration — narrate when a deity casts the player out for lost favour
-- Per-deity default voice types
-- Deity-specific personalities and speech styles (52 unique personas)
+- Deity-specific personalities and speech styles (52 unique personas) — prompt ready, awaiting SkyrimNet fix
 - Expanded deity lore and tenets for richer roleplay
-- MCM configuration menu
 - SkyrimNet actions to increase/decrease deity favour
+- Option to commune with non-followed deities when interacting with their shrines
 
 Please feel free to leave any suggestions and feedback.

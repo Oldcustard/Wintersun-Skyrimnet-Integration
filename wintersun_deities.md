@@ -70,7 +70,7 @@ Categories: **Aedra (Divine)** | **Daedric Prince** | **Khajiiti Pantheon** | **
 - **Personality:** TODO
 
 ### Shor
-- **Voice Type:** MaleNordCommander (worshipID 27)
+- **Voice Type:** specialmaleuniquetsun (worshipID 27)
 - **Domain:** The underworld, the dead, mankind, Sovngarde
 - **Description:** TODO
 - **Tenets:** TODO
@@ -110,7 +110,7 @@ Categories: **Aedra (Divine)** | **Daedric Prince** | **Khajiiti Pantheon** | **
 ## Daedric Princes
 
 ### Azura
-- **Voice Type:** FemaleSultry (worshipID 6)
+- **Voice Type:** femaleuniqueazura (worshipID 6)
 - **Domain:** Dusk and dawn, magic, vanity, the transition between night and day
 - **Description:** TODO
 - **Tenets:** TODO
@@ -137,7 +137,7 @@ Categories: **Aedra (Divine)** | **Daedric Prince** | **Khajiiti Pantheon** | **
 - **Personality:** TODO
 
 ### Hermaeus Mora
-- **Voice Type:** MaleOldGrumpy (worshipID 28)
+- **Voice Type:** maleuniquehermaeusmora (worshipID 28)
 - **Domain:** Knowledge, memory, the scrying of the tides of Fate
 - **Description:** TODO
 - **Tenets:** TODO
@@ -200,7 +200,7 @@ Categories: **Aedra (Divine)** | **Daedric Prince** | **Khajiiti Pantheon** | **
 - **Personality:** TODO
 
 ### Meridia
-- **Voice Type:** FemaleCommander (worshipID 5)
+- **Voice Type:** femaleuniquemeridia (worshipID 5)
 - **Domain:** Light, beauty, energy, initiative, the undead (enemy)
 - **Description:** TODO
 - **Tenets:** TODO
@@ -227,7 +227,7 @@ Categories: **Aedra (Divine)** | **Daedric Prince** | **Khajiiti Pantheon** | **
 - **Personality:** TODO
 
 ### Nocturnal
-- **Voice Type:** FemaleSultry (worshipID 15)
+- **Voice Type:** femaleuniquenocturnal (worshipID 15)
 - **Domain:** Night, darkness, luck, shadows, the unknown
 - **Description:** TODO
 - **Tenets:** TODO
@@ -254,7 +254,7 @@ Categories: **Aedra (Divine)** | **Daedric Prince** | **Khajiiti Pantheon** | **
 - **Personality:** TODO
 
 ### Sheogorath
-- **Voice Type:** MaleWarlock (worshipID 33)
+- **Voice Type:** maleuniquesheogorath (worshipID 33)
 - **Domain:** Madness, creativity, the mind
 - **Description:** TODO
 - **Tenets:** TODO

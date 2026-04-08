@@ -12,20 +12,19 @@ Scriptname WSN_SkyrimNet_QuestScript Extends Quest
 ;
 ; Voice configuration:
 ;   WSN_DeityVoiceID is a String[] indexed by worshipID (0-51), providing
-;   per-deity default voice types. DeityVoiceID is the fallback when the
-;   array is empty or the deity's entry is blank.
-;   Per-deity voice is only applied at initial registration. HandlePrayerStart
-;   passes "" to preserve player-customized voices from the SkyrimNet WebUI.
+;   per-deity default voice types. DeityVoiceID is the hardcoded fallback.
+;   The "voice.override" manifest setting takes precedence over all if set.
+;   HandlePrayerStart always passes the resolved voice so deity switches
+;   update correctly. If an override is set, it persists across switches.
 ;
 ; Debug:
-;   bDebugMode = True logs every event to screen + Papyrus log.
+;   Controlled via manifest.yaml "debug.enabled" setting (SkyrimNet WebUI).
 ; =============================================================================
 
 String VIRTUAL_NPC_NAME = "wsn_deity"
 
 String Property DeityVoiceID = "MaleSoldier" Auto
 String[] WSN_DeityVoiceID
-Bool Property bDebugMode = False Auto
 Bool Property bInitialized = False Auto Hidden
 Bool Property bPrayerActive = False Auto Hidden
 
@@ -40,6 +39,7 @@ EndEvent
 
 Event OnUpdate()
     If !bInitialized
+        InitDeityVoices()
         If IsWintersunLoaded()
             DBG("Init: Wintersun loaded, registering virtual NPC")
             RegisterOrUpdateVirtualNPC()
@@ -81,8 +81,8 @@ Function HandlePrayerStart()
         Return
     EndIf
 
-    If !tracker.IsFavored
-        DBG("HandlePrayerStart: player is not Favored")
+    If GetRequireDevotee() && !tracker.IsFavored
+        DBG("HandlePrayerStart: player is not Devotee and require_devotee is enabled")
         Return
     EndIf
 
@@ -100,7 +100,8 @@ Function HandlePrayerStart()
 
     DBG("HandlePrayerStart: worshipID=" + worshipID as String + " deity=" + deityName)
 
-    SkyrimNetApi.UpdateVirtualNPC(VIRTUAL_NPC_NAME, deityName, "", "", "")
+    String deityVoice = ResolveVoice(worshipID)
+    SkyrimNetApi.UpdateVirtualNPC(VIRTUAL_NPC_NAME, deityName, deityVoice, "", "")
 
     DBG("HandlePrayerStart: enabling virtual NPC")
     SkyrimNetApi.EnableVirtualNPC(VIRTUAL_NPC_NAME)
@@ -125,23 +126,18 @@ EndFunction
 Function RegisterOrUpdateVirtualNPC()
     wsn_trackerquest_quest tracker = GetTracker()
     String deityName = ""
-    String deityVoice = DeityVoiceID  ; fallback global default
+    Int worshipID = -1
 
     If tracker != None && tracker.worshipID != -1
         deityName = tracker.WSN_DeityName[tracker.worshipID]
-        Int wid = tracker.worshipID
-        If wid >= 0 && wid < WSN_DeityVoiceID.Length
-            String perDeityVoice = WSN_DeityVoiceID[wid]
-            If perDeityVoice != ""
-                deityVoice = perDeityVoice
-            EndIf
-        EndIf
+        worshipID = tracker.worshipID
     EndIf
 
     If deityName == ""
         deityName = "Unknown Deity"
     EndIf
 
+    String deityVoice = ResolveVoice(worshipID)
     DBG("RegisterVirtualNPC: name=" + deityName + " voice=" + deityVoice)
     SkyrimNetApi.RegisterVirtualNPC(VIRTUAL_NPC_NAME, deityName, deityVoice, "private", "")
     SkyrimNetApi.DisableVirtualNPC(VIRTUAL_NPC_NAME)
@@ -210,6 +206,36 @@ Function InitDeityVoices()
 EndFunction
 
 ; ---------------------------------------------------------------------------
+; Config — read from SkyrimNet manifest settings
+; ---------------------------------------------------------------------------
+
+Bool Function GetDebugMode()
+    Return SkyrimNetApi.GetConfigBool("Plugin_Wintersun Integration", "debug.enabled", False)
+EndFunction
+
+String Function GetVoiceOverride()
+    Return SkyrimNetApi.GetConfigString("Plugin_Wintersun Integration", "voice.override", "")
+EndFunction
+
+Bool Function GetRequireDevotee()
+    Return SkyrimNetApi.GetConfigBool("Plugin_Wintersun Integration", "require_devotee", True)
+EndFunction
+
+String Function ResolveVoice(Int worshipID)
+    String voiceOverride = GetVoiceOverride()
+    If voiceOverride != ""
+        Return voiceOverride
+    EndIf
+    If worshipID >= 0 && worshipID < WSN_DeityVoiceID.Length
+        String perDeityVoice = WSN_DeityVoiceID[worshipID]
+        If perDeityVoice != ""
+            Return perDeityVoice
+        EndIf
+    EndIf
+    Return DeityVoiceID
+EndFunction
+
+; ---------------------------------------------------------------------------
 ; Helpers
 ; ---------------------------------------------------------------------------
 
@@ -230,7 +256,7 @@ Bool Function IsWintersunLoaded()
 EndFunction
 
 Function DBG(String msg)
-    If bDebugMode
+    If GetDebugMode()
         Debug.Notification("[WSN] " + msg)
         Debug.Trace("[WSN] " + msg, 0)
     EndIf

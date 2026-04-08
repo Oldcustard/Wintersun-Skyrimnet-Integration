@@ -74,10 +74,11 @@ Alias scripts are **not** stored on `QuestAlias` objects directly — they live 
 When the player prays as a Devotee, their deity becomes a conversable virtual NPC:
 
 1. **Prayer detection**: `WSN_SkyrimNet_PlayerAliasScript` uses PO3 Papyrus Extender's alias-based `OnMagicEffectApplyEx` to detect the Wintersun prayer effect
-2. **NPC activation**: `WSN_SkyrimNet_QuestScript.HandlePrayerStart()` looks up the deity name via `wsn_trackerquest_quest`, calls `UpdateVirtualNPC` (blank params = keep current), then `EnableVirtualNPC`
+2. **NPC activation**: `WSN_SkyrimNet_QuestScript.HandlePrayerStart()` looks up the deity name via `wsn_trackerquest_quest`, calls `UpdateVirtualNPC` with resolved voice, then `EnableVirtualNPC`
 3. **Prayer end**: 5-second polling via `RegisterForSingleUpdate` — checks `HasMagicEffect` on the player
-4. **Deity persona prompt** (`wsn_deity_virtual.prompt`) — **BROKEN, excluded from packages**. 52 deity-specific if/elif blocks exist but personality formatting is not working correctly. Fix planned.
-5. **Voice**: `WSN_DeityVoiceID` String[] (indexed by worshipID 0–51) provides per-deity default voice types, initialized in `InitDeityVoices()`. `DeityVoiceID` is the global fallback. Per-deity voice is only applied at initial registration; `HandlePrayerStart()` passes `""` to preserve player WebUI customization. Voice type reference: `wintersun_deities.md`
+4. **Deity persona prompt** (`wsn_deity_virtual.prompt`) — Uses `{% block summary %}`, `{% block personality %}`, `{% block speech_style %}` format with 52 deity-specific if/elif blocks inside each block. Deity name resolved via `get_script_property` + `at()` from Wintersun's `WSN_DeityName` array. Each block contains its own `{% set %}` lines for variable scoping.
+5. **Voice**: `ResolveVoice(worshipID)` checks manifest override → per-deity voice from `WSN_DeityVoiceID[]` → fallback `DeityVoiceID`. Always passed in `HandlePrayerStart()` so deity switches update correctly. Voice type reference: `wintersun_deities.md`
+6. **Settings**: `manifest.yaml` defines `debug.enabled` (bool), `voice.override` (string), and `require_devotee` (bool). Read via `SkyrimNetApi.GetConfigBool`/`GetConfigString`. No MCM needed.
 
 ### SkyrimNet Trigger YAMLs
 
@@ -89,17 +90,17 @@ When the player prays as a Devotee, their deity becomes a conversable virtual NP
 
 ### Packaging
 
-Two zip files are built manually with Python's `zipfile` module (no build script):
+One zip file built manually with Python's `zipfile` module (no build script):
 
-- **Full** (`Wintersun-SkyrimNet-Integration.zip`): scripts, seq, ESP, working triggers, character bio prompt. Excludes: deity persona prompt (broken), switch/abandonment triggers (broken).
-- **Lite** (`Wintersun-SkyrimNet-Integration-Lite.zip`): all triggers (including broken ones for reference) + character bio prompt only. No scripts or ESP.
+- **Full** (`Wintersun-SkyrimNet-Integration.zip`): scripts, seq, ESP, working triggers, character bio prompt, deity persona prompt, manifest.yaml. Excludes: switch/abandonment triggers (broken).
 
 File mapping into zip:
 - `Scripts/*.pex` → `Scripts/`
 - `Seq/*.seq` → `Seq/`
-- `Triggers/*.yaml` → `SKSE/Plugins/SkyrimNet/config/triggers/`
+- `Triggers/*.yaml` (working only) → `SKSE/Plugins/SkyrimNet/config/triggers/`
 - `Prompts/characters/*.prompt` → `SKSE/Plugins/SkyrimNet/prompts/characters/`
 - `Prompts/0350_wintersun.prompt` → `SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/`
+- `manifest.yaml` → `SKSE/Plugins/SkyrimNet/config/plugins/Wintersun Integration/manifest.yaml`
 - `*.esp` → root
 
 ### ESPFE

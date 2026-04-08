@@ -38,7 +38,7 @@ Function OnMagicEffectApplyEx(ObjectReference akCaster, MagicEffect akEffect, Fo
 EndFunction
 
 Function DBG(String msg)
-    If QuestScript != None && QuestScript.bDebugMode
+    If QuestScript != None && QuestScript.GetDebugMode()
         Debug.Notification("[WSN-Alias] " + msg)
         Debug.Trace("[WSN-Alias] " + msg, 0)
     EndIf
