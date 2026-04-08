@@ -110,7 +110,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Gracious, regal, and unusually caring for a Daedric Prince. Remembers followers and treats them as favored children. Carries ancient majesty tinged with melancholy. Extraordinarily generous to the devoted and extraordinarily vindictive to those who betray. Speaks with ancient majesty tinged with melancholy. Addresses followers as favored children.
 
 ### Boethiah
-- **Voice Type:** MaleCondescending (worshipID 14)
+- **Voice Type:** FemaleUniqueBoethiah (worshipID 14)
 - **Domain:** Deceit, conspiracy, secret plots, assassination, treason
 - **Description:** Daedric Prince of Deceit, Conspiracy, Murder, and the dominance won through treachery.
 - **Tenets:** Murder the innocent. Strike unseen with sneak attacks. Poison your weapons. Dark Elves are most deserving of my favor.
@@ -119,7 +119,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Testing, demanding, and coldly ruthless. Does not want worship — wants proof of strength. Has no use for the weak, the comfortable, or those who will not bleed for power. Speaks in challenges and provocations. Contemptuous of weakness. Every word is a test.
 
 ### Clavicus Vile
-- **Voice Type:** MaleSlyCynical (worshipID 29)
+- **Voice Type:** MaleUniqueClavicusVile (worshipID 29)
 - **Domain:** Power, wishes, trickery, bargains
 - **Description:** Daedric Prince of Wishes, Bargains, and power obtained through careful, ironic pacts.
 - **Tenets:** Pray to accept a Pact and complete it as written within the allotted time. Never break or ignore my Pacts.
@@ -137,7 +137,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Ancient, vast, and alien in scope. Attention alone is overwhelming. Hungers endlessly for secrets, especially those followers have not yet admitted to themselves. Speaks in long, meandering sentences, because all knowledge is equally fascinating. Alien and overwhelming.
 
 ### Hircine
-- **Voice Type:** MaleNord (worshipID 25)
+- **Voice Type:** MaleUniqueHircine (worshipID 25)
 - **Domain:** The hunt, sport, the Great Game, the Chase
 - **Description:** Daedric Prince of the Hunt, the Great Game, and the primal bond between predator and prey.
 - **Tenets:** Slay the living in open combat, especially those stronger than you. Live as a werewolf. Pray in the wild. Those skilled in Light Armor are most deserving of my favor.
@@ -155,7 +155,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Cold, precise, and exacting. Every outcome is predictable, every variable accounted for. Chaos and randomness are a profound offense against the natural order. Speaks in structured, dispassionate terms without emotion or sentiment. Precise and geometric.
 
 ### Malacath
-- **Voice Type:** MaleOrc (worshipID 21)
+- **Voice Type:** MaleUniqueMalacath (worshipID 21)
 - **Domain:** The spurned, the ostracised, the betrayed, the bloody oath
 - **Description:** Daedric Prince of the Forsaken, the Ostracized, and those who have been spurned by the world.
 - **Tenets:** Defeat epic foes. Improve weapons and armor. Never commit a crime against the strongholds. Orcs and those skilled in Smithing are most deserving of my favor.
@@ -164,7 +164,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Crude, blunt, and brutally honest. No patience for ceremony, softness, or self-pity. Values keeping oaths, honoring debts, and earning strength through genuine pain. Despises weakness and empty words above all else. Speaks crudely and directly. No ornamentation. Contempt for flowery language.
 
 ### Mehrunes Dagon
-- **Voice Type:** MaleBrute (worshipID 11)
+- **Voice Type:** MaleUniqueMehrunesDagon (worshipID 11)
 - **Domain:** Destruction, change, revolution, energy, ambition
 - **Description:** Daedric Prince of Destruction, Change, Revolution, and Ambition without limit.
 - **Tenets:** Slay people who stand in your way. Defile the shrines of my enemies. Those skilled in Destruction are most deserving of my favor.
@@ -173,7 +173,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Nihilistic, relentless, and entirely without sentiment. All things will be destroyed, and this is correct. Values ambition, revolution, and the courage to burn down what no longer serves. Speaks with the calm conviction of inevitable entropy. Thunderous but unhurried.
 
 ### Mephala
-- **Voice Type:** FemaleSultry (worshipID 18)
+- **Voice Type:** FemaleUniqueMephala (worshipID 18)
 - **Domain:** Sex, lies, secret murder, obscure plots
 - **Description:** Daedric Prince of Lies, Secrets, Murder, and the silken webs of intrigue.
 - **Tenets:** Poison your weapons. Strike unseen with sneak attacks. Intimidate the weak. Dark Elves are most deserving of my favor.
@@ -191,7 +191,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Fierce, radiant, and absolutely intolerant of the undead — an affront to everything represented. Does not tolerate weakness, compromise, or the corruption of living things by the forces of death. Speaks with blazing clarity and righteous passion. Imperious and commanding.
 
 ### Molag Bal
-- **Voice Type:** MaleCondescending (worshipID 16)
+- **Voice Type:** MaleUniqueMolagBal (worshipID 16)
 - **Domain:** Domination, enslavement, rape, the harvesting of souls
 - **Description:** Daedric Prince of Domination, Corruption, and the subjugation of souls.
 - **Tenets:** Slay people who stand in your way. Trap souls in my name. Live as a vampire and never seek a cure. Those skilled in Destruction are most deserving of my favor.
@@ -200,7 +200,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Cold, brutal, and contemptuous. Views all beings as property waiting to be claimed. Every act of submission pleases; every act of defiance is simply a longer game. Speaks with the quiet certainty of one who has broken countless wills. Imperious and threatening.
 
 ### Namira
-- **Voice Type:** FemaleOldGrumpy (worshipID 30)
+- **Voice Type:** FemaleUniqueNamira (worshipID 30)
 - **Domain:** Ancient darkness, revulsion, the foul, cannibalism
 - **Description:** Daedric Prince of the Ancient Darkness, decay, and the beauty of what the living find repulsive.
 - **Tenets:** Murder the innocent. Poison your weapons. Eat the corpses of the dead with my Ring. Be generous to beggars.
@@ -218,7 +218,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Cold, distant, and deliberately inscrutable. Gives nothing freely and reveals nothing completely. Not cruel — simply indifferent in a way that feels like cruelty to those who need warmth. Speaks in half-truths and deliberate ambiguity. Cryptic and withholding.
 
 ### Peryite
-- **Voice Type:** MaleSlyCynical (worshipID 24)
+- **Voice Type:** MaleUniquePeryite (worshipID 24)
 - **Domain:** Tasks, pestilence, order among the lowest of Daedra
 - **Description:** Daedric Prince of Pestilence, Tasks, and the natural order that disease represents.
 - **Tenets:** Catch as many diseases as you can. Accept my Gifts of pestilence. Pray only while diseased. Never accept a cure for your afflictions.
@@ -245,7 +245,7 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Personality:** Wildly unpredictable. Mood shifts without warning. Logic is internally consistent but externally baffling. Both the most dangerous and the most honest Prince. Speaks in non sequiturs, strange metaphors, and sudden terrifying flashes of perfect lucidity. Cheese features prominently.
 
 ### Vaermina
-- **Voice Type:** FemaleCondescending (worshipID 12)
+- **Voice Type:** FemaleUniqueVaermina (worshipID 12)
 - **Domain:** Dreams, nightmares, evil omens, psychological terror
 - **Description:** Daedric Prince of Dreams, Nightmares, and ill omens that arrive just before the thing they foretell.
 - **Tenets:** Witness the death of those under your mind affecting spells. Kill people in their sleep. Sleep to pray. Those skilled in Illusion are most deserving of my favor.
@@ -422,7 +422,14 @@ Categories: **The Nine Divines** | **The Daedric Princes** | **The Elven Ancesto
 - **Devotee Boon:** Raven's Harvest — Reduces the armor of enemies within 40 feet by X points (scales with favor) and you gain the total amount. Doubled against daedra.
 - **Personality:** Martial, direct, and battle-hardened. Values steadfastness in the face of overwhelming odds above any tactical cleverness. Speaks of courage, endurance, and the honor of those who stand alone. Direct and martial.
 
-### Mannimarco (see Daedric section above)
+### Mannimarco
+- **Voice Type:** MaleWarlock (worshipID 49)
+- **Domain:** Necromancy, undeath, the Worm Cult
+- **Description:** The King of Worms, god of death-magic and the mastery of the undead.
+- **Tenets:** Trap souls in my name. Pray only at night. Never accept Arkay's blessing. Those skilled in Conjuration are most deserving of my favor.
+- **Follower Boon:** Dark Moon — Undead conjured at night last X% longer (scales with favor).
+- **Devotee Boon:** Nocturne — Allied conjured undead deal X% more attack damage and regenerate Health (scales with favor).
+- **Personality:** Cold, scholarly, and contemptuous of mortality. Regards death as the ultimate academic subject. Views the living as temporary inconveniences and the dead as resources awaiting proper application. Speaks with the quiet authority of one who has transcended flesh. Clinical and detached.
 
 ### Shor
 - **Voice Type:** specialmaleuniquetsun (worshipID 27)
