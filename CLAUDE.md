@@ -107,7 +107,21 @@ File mapping into zip:
 
 The plugin (`WSN_SkyrimNet_Integration.esp`) is ESL-flagged (`0x200` header flag) and does not consume a load order slot.
 
+## Releases
+
+GitHub repo: `https://github.com/Oldcustard/Wintersun-Skyrimnet-Integration`
+
+Publish a release with:
+```bash
+git tag vX.Y.Z && git push origin vX.Y.Z
+gh release create vX.Y.Z "Wintersun-SkyrimNet-Integration.zip" --title "Wintersun SkyrimNet Integration vX.Y.Z" --notes "..."
+```
+
+Release notes come from the local `release-vX.Y.Z.md` file (gitignored — not in repo). Full release workflow: `.claude/plans/release-workflow.md`.
+
 ## Plans
+
+> `.claude/` is gitignored — these files exist locally only and will not be present on a fresh clone.
 
 - `.claude/plans/deity-personality-database.md` — Deity personality database architecture (three-layer system: reference → Papyrus arrays → prompt template)
 - `.claude/plans/release-workflow.md` — Version release workflow (debug disable, changelog, packaging, GitHub release)
