@@ -313,7 +313,7 @@ Function HandleShrineWorshipStart(Int shrineWorshipID)
         Return
     EndIf
     String deityVoice = ResolveVoice(shrineWorshipID)
-    SkyrimNetApi.RegisterVirtualNPC(VIRTUAL_NPC_NAME, deityName, deityVoice, "private", "")
+    SkyrimNetApi.UpdateVirtualNPC(VIRTUAL_NPC_NAME, deityName, deityVoice, "", "")
     DBG("HandleShrineWorshipStart: enabling virtual NPC for " + deityName)
     SkyrimNetApi.EnableVirtualNPC(VIRTUAL_NPC_NAME)
     bShrineCommunionActive = True
