@@ -23,9 +23,7 @@ Event OnUpdate()
     EndIf
     DBG("Registering PO3 alias event for prayer effect")
     PO3_Events_Alias.RegisterForMagicEffectApplyEx(Self, PrayerEffect as Form, True)
-    If QuestScript.GetAllowShrineCommunion()
-        InitShrineEffects()
-    EndIf
+    InitShrineEffects()
     DBG("PO3 alias registration complete")
 EndEvent
 
