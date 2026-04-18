@@ -26,3 +26,17 @@ schema:
       description: "If enabled, the deity virtual NPC only activates when the player is a Devotee. If disabled, all worshippers can commune with their deity during prayer."
       defaultValue: true
       category: "Behaviour"
+
+    - name: "Allow Shrine Communion"
+      path: "allow_shrine_communion"
+      type: "bool"
+      description: "If enabled, activating any deity's shrine starts a brief communion with that deity, even if they are not your followed deity."
+      defaultValue: false
+      category: "Behaviour"
+
+    - name: "Shrine Communion Duration"
+      path: "shrine_communion_duration"
+      type: "string"
+      description: "How many seconds the shrine communion virtual NPC stays active (default: 120)."
+      defaultValue: "120"
+      category: "Behaviour"

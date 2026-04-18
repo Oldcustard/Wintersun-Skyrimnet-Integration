@@ -10,5 +10,5 @@
 - [ ] Add SkyrimNet actions to increase/decrease favour with the current deity
 - [x] Config option — whether deities require Devotee status to be communicated with (vs. allowing all worshippers)
 - [ ] Handle saved memories when switching deities — determine whether/how SkyrimNet memories should be cleared or scoped per-deity on deity switch
-- [ ] Config option — allow communing with non-followed deities when interacting with their shrines
+- [x] Config option — allow communing with non-followed deities when interacting with their shrines
 - [ ] Bio override issue — save-specific prompts in `_saves/<save_id>/characters/` overwrite mod-provided deity persona prompt; user-side workaround documented in release post (copy `wsn_deity_virtual.prompt` into save folder manually); awaiting upstream SkyrimNet fix

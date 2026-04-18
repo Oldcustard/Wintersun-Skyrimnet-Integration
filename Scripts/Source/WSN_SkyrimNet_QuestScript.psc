@@ -27,6 +27,7 @@ String Property DeityVoiceID = "MaleSoldier" Auto
 String[] WSN_DeityVoiceID
 Bool Property bInitialized = False Auto Hidden
 Bool Property bPrayerActive = False Auto Hidden
+Bool Property bShrineCommunionActive = False Auto Hidden
 
 ; ---------------------------------------------------------------------------
 ; Init — defer until game is fully loaded, register NPC
@@ -52,7 +53,7 @@ Event OnUpdate()
         Return
     EndIf
 
-    ; Prayer end detection: poll every 1s while prayer is active
+    ; Prayer end detection: poll every 5s while prayer is active
     If bPrayerActive
         MagicEffect prayerEffect = GetPrayerEffect()
         If prayerEffect != None && Game.GetPlayer().HasMagicEffect(prayerEffect)
@@ -60,6 +61,13 @@ Event OnUpdate()
         Else
             HandlePrayerEnd()
         EndIf
+        Return
+    EndIf
+
+    ; Shrine communion timer fired — end communion
+    If bShrineCommunionActive
+        HandleShrineWorshipEnd()
+        Return
     EndIf
 EndEvent
 
@@ -69,6 +77,11 @@ EndEvent
 
 Function HandlePrayerStart()
     DBG("HandlePrayerStart called")
+
+    If bShrineCommunionActive
+        DBG("HandlePrayerStart: cancelling shrine communion for prayer")
+        HandleShrineWorshipEnd()
+    EndIf
 
     If bPrayerActive
         DBG("HandlePrayerStart: already active, skipping")
@@ -221,6 +234,18 @@ Bool Function GetRequireDevotee()
     Return SkyrimNetApi.GetConfigBool("Plugin_Wintersun Integration", "require_devotee", True)
 EndFunction
 
+Bool Function GetAllowShrineCommunion()
+    Return SkyrimNetApi.GetConfigBool("Plugin_Wintersun Integration", "allow_shrine_communion", False)
+EndFunction
+
+Float Function GetShrineCommunionDuration()
+    String val = SkyrimNetApi.GetConfigString("Plugin_Wintersun Integration", "shrine_communion_duration", "120")
+    If val == ""
+        Return 120.0
+    EndIf
+    Return val as Float
+EndFunction
+
 String Function ResolveVoice(Int worshipID)
     String voiceOverride = GetVoiceOverride()
     If voiceOverride != ""
@@ -233,6 +258,72 @@ String Function ResolveVoice(Int worshipID)
         EndIf
     EndIf
     Return DeityVoiceID
+EndFunction
+
+; ---------------------------------------------------------------------------
+; Shrine communion
+; ---------------------------------------------------------------------------
+
+Function HandleShrineEffectApplied(MagicEffect akEffect)
+    If bPrayerActive || bShrineCommunionActive
+        DBG("HandleShrineEffectApplied: communion already active, skipping")
+        Return
+    EndIf
+    wsn_trackerquest_quest tracker = GetTracker()
+    If tracker == None
+        Return
+    EndIf
+    ; Extract deity name: "Do you want to worship [Name]?" → "[Name]"
+    String effectName = akEffect.GetName()
+    String deityName = StringUtil.Substring(effectName, 23)
+    Int nameLen = StringUtil.GetLength(deityName)
+    If nameLen > 0 && StringUtil.GetNthChar(deityName, nameLen - 1) == "?"
+        deityName = StringUtil.Substring(deityName, 0, nameLen - 1)
+    EndIf
+    ; Reverse-lookup worshipID
+    Int worshipID = -1
+    Int i = 0
+    While i < tracker.WSN_DeityName.Length
+        If tracker.WSN_DeityName[i] == deityName
+            worshipID = i
+            i = tracker.WSN_DeityName.Length
+        EndIf
+        i += 1
+    EndWhile
+    DBG("HandleShrineEffectApplied: deity=" + deityName + " worshipID=" + worshipID as String)
+    If worshipID == -1
+        DBG("HandleShrineEffectApplied: deity not found in name array")
+        Return
+    EndIf
+    ; Skip if this is the player's followed deity (prayer path handles it)
+    If worshipID == tracker.worshipID
+        DBG("HandleShrineEffectApplied: own deity shrine, skipping (prayer path)")
+        Return
+    EndIf
+    HandleShrineWorshipStart(worshipID)
+EndFunction
+
+Function HandleShrineWorshipStart(Int shrineWorshipID)
+    wsn_trackerquest_quest tracker = GetTracker()
+    If tracker == None
+        Return
+    EndIf
+    String deityName = tracker.WSN_DeityName[shrineWorshipID]
+    If deityName == ""
+        Return
+    EndIf
+    String deityVoice = ResolveVoice(shrineWorshipID)
+    SkyrimNetApi.RegisterVirtualNPC(VIRTUAL_NPC_NAME, deityName, deityVoice, "private", "")
+    DBG("HandleShrineWorshipStart: enabling virtual NPC for " + deityName)
+    SkyrimNetApi.EnableVirtualNPC(VIRTUAL_NPC_NAME)
+    bShrineCommunionActive = True
+    RegisterForSingleUpdate(GetShrineCommunionDuration())
+EndFunction
+
+Function HandleShrineWorshipEnd()
+    DBG("HandleShrineWorshipEnd: disabling virtual NPC")
+    bShrineCommunionActive = False
+    SkyrimNetApi.DisableVirtualNPC(VIRTUAL_NPC_NAME)
 EndFunction
 
 ; ---------------------------------------------------------------------------
