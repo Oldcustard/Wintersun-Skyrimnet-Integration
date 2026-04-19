@@ -1,6 +1,6 @@
 plugin:
   name: "Wintersun Integration"
-  version: "2.1.0"
+  version: "2.2.0"
   description: "Wintersun deity virtual NPC settings"
   icon: "🙏"
 
@@ -31,7 +31,7 @@ schema:
       path: "allow_shrine_communion"
       type: "bool"
       description: "If enabled, activating any deity's shrine starts a brief communion with that deity, even if they are not your followed deity."
-      defaultValue: false
+      defaultValue: true
       category: "Behaviour"
 
     - name: "Shrine Communion Duration"

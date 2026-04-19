@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2026-04-19
+
+### Added
+
+- Shrine communion — activating any deity's shrine starts a brief conversation with that deity, even if they are not your followed deity. On by default; configurable via `allow_shrine_communion` and `shrine_communion_duration` manifest settings.
+
+### Changed
+
+- Sai removed from deity list (no longer present in Wintersun)
+
 ## [2.1.0] - 2026-04-07
 
 ### Added

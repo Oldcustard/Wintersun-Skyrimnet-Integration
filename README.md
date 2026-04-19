@@ -21,6 +21,9 @@ The SkyrimNet character profile includes your deity and rank:
 ### Deity virtual NPC
 When you pray, your deity becomes available as a conversation partner for the duration of the prayer. Each of the 52 Wintersun deities has a unique default voice type and personality prompt. Configurable via the SkyrimNet WebUI.
 
+### Shrine communion
+Activating any deity's shrine starts a brief conversation with that deity — even if they are not your followed deity. Duration and enable/disable are configurable via the SkyrimNet WebUI.
+
 ## Requirements
 
 - [Wintersun – Faiths of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/22506)
@@ -40,6 +43,8 @@ Settings are available in the SkyrimNet WebUI under the **Wintersun Integration*
 |---|---|
 | **Voice Type Override** | Override all deity voices with a single voice type (e.g. `MaleEvenToned`). Leave empty to use per-deity defaults. |
 | **Require Devotee Status** | When enabled, the deity virtual NPC only activates for Devotees. Disable to allow all worshippers to commune. Default: on. |
+| **Allow Shrine Communion** | When enabled, activating any shrine starts a brief conversation with that deity. Default: on. |
+| **Shrine Communion Duration** | How many seconds the shrine deity stays active. Default: 120. |
 | **Debug Mode** | Show in-game debug notifications. For troubleshooting only. Default: off. |
 
 ## Known Issues
@@ -51,6 +56,5 @@ Settings are available in the SkyrimNet WebUI under the **Wintersun Integration*
 ## Planned
 
 - Deity switching and abandonment narration
-- Option to commune with non-followed deities at their shrines
 - SkyrimNet actions to increase/decrease deity favour
 - Expanded deity lore and tenets for richer prayer dialogue

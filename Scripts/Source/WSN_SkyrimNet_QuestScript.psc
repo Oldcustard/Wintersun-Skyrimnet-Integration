@@ -235,7 +235,7 @@ Bool Function GetRequireDevotee()
 EndFunction
 
 Bool Function GetAllowShrineCommunion()
-    Return SkyrimNetApi.GetConfigBool("Plugin_Wintersun Integration", "allow_shrine_communion", False)
+    Return SkyrimNetApi.GetConfigBool("Plugin_Wintersun Integration", "allow_shrine_communion", True)
 EndFunction
 
 Float Function GetShrineCommunionDuration()
