@@ -1,7 +1,7 @@
 {# Wintersun x SkyrimNet - Deity Virtual NPC Persona #}
 
 {% block summary %}
-{% set worshipID = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WorshipID") %}
+{% set worshipID = get_script_property("WSN_SkyrimNet_Integration_Quest", "WSN_SkyrimNet_QuestScript", "ActiveDeityWorshipID") %}
 {% set deityNames = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WSN_DeityName") %}
 {% set deityName = at(deityNames, worshipID) %}
 {% if deityName == "Akatosh" %}
@@ -112,7 +112,7 @@ An ancient and powerful deity of Tamriel whose domain is known to devoted follow
 {% endblock %}
 
 {% block personality %}
-{% set worshipID = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WorshipID") %}
+{% set worshipID = get_script_property("WSN_SkyrimNet_Integration_Quest", "WSN_SkyrimNet_QuestScript", "ActiveDeityWorshipID") %}
 {% set deityNames = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WSN_DeityName") %}
 {% set deityName = at(deityNames, worshipID) %}
 {% if deityName == "Akatosh" %}
@@ -223,7 +223,7 @@ Divine, purposeful, and aware. Speaks with appropriate divine authority and grav
 {% endblock %}
 
 {% block speech_style %}
-{% set worshipID = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WorshipID") %}
+{% set worshipID = get_script_property("WSN_SkyrimNet_Integration_Quest", "WSN_SkyrimNet_QuestScript", "ActiveDeityWorshipID") %}
 {% set deityNames = get_script_property("WSN_TrackerQuest_Quest", "wsn_trackerquest_quest", "WSN_DeityName") %}
 {% set deityName = at(deityNames, worshipID) %}
 {% if deityName == "Akatosh" %}

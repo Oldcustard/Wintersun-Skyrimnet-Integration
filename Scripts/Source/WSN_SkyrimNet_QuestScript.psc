@@ -28,6 +28,7 @@ String[] WSN_DeityVoiceID
 Bool Property bInitialized = False Auto Hidden
 Bool Property bPrayerActive = False Auto Hidden
 Bool Property bShrineCommunionActive = False Auto Hidden
+Int Property ActiveDeityWorshipID = -1 Auto Hidden
 
 ; ---------------------------------------------------------------------------
 ; Init — defer until game is fully loaded, register NPC
@@ -117,6 +118,7 @@ Function HandlePrayerStart()
     SkyrimNetApi.UpdateVirtualNPC(VIRTUAL_NPC_NAME, deityName, deityVoice, "", "")
 
     DBG("HandlePrayerStart: enabling virtual NPC")
+    ActiveDeityWorshipID = worshipID
     SkyrimNetApi.EnableVirtualNPC(VIRTUAL_NPC_NAME)
     bPrayerActive = True
     RegisterForSingleUpdate(5.0)
@@ -129,6 +131,7 @@ EndFunction
 Function HandlePrayerEnd()
     DBG("HandlePrayerEnd: disabling virtual NPC")
     bPrayerActive = False
+    ActiveDeityWorshipID = -1
     SkyrimNetApi.DisableVirtualNPC(VIRTUAL_NPC_NAME)
 EndFunction
 
@@ -315,6 +318,7 @@ Function HandleShrineWorshipStart(Int shrineWorshipID)
     String deityVoice = ResolveVoice(shrineWorshipID)
     SkyrimNetApi.UpdateVirtualNPC(VIRTUAL_NPC_NAME, deityName, deityVoice, "", "")
     DBG("HandleShrineWorshipStart: enabling virtual NPC for " + deityName)
+    ActiveDeityWorshipID = shrineWorshipID
     SkyrimNetApi.EnableVirtualNPC(VIRTUAL_NPC_NAME)
     bShrineCommunionActive = True
     RegisterForSingleUpdate(GetShrineCommunionDuration())
@@ -323,6 +327,7 @@ EndFunction
 Function HandleShrineWorshipEnd()
     DBG("HandleShrineWorshipEnd: disabling virtual NPC")
     bShrineCommunionActive = False
+    ActiveDeityWorshipID = -1
     SkyrimNetApi.DisableVirtualNPC(VIRTUAL_NPC_NAME)
 EndFunction
 
