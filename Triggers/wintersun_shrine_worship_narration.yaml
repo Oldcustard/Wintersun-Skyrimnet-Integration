@@ -14,7 +14,9 @@ eventCriteria:
 
 response:
   type: "direct_narration"
-  content: "*{{ player_name }} approaches the shrine and bows their head in reverence to {{ event_json.effect | replace(\"Do you want to worship \", \"\") | replace(\"?\", \"\") }}.*"
+  content: >-
+    {% set deityName = get_script_property("WSN_SkyrimNet_Integration_Quest", "WSN_SkyrimNet_QuestScript", "sLastShrineDeityName") %}
+    *{{ player_name }} approaches the shrine and bows their head in reverence to {{ deityName }}.*
 
 audience: "nearby_npcs"
 enabled: true

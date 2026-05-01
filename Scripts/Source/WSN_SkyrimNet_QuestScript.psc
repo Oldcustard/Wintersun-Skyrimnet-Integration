@@ -29,6 +29,7 @@ Bool Property bInitialized = False Auto Hidden
 Bool Property bPrayerActive = False Auto Hidden
 Bool Property bShrineCommunionActive = False Auto Hidden
 Int Property ActiveDeityWorshipID = -1 Auto Hidden
+String Property sLastShrineDeityName = "" Auto Hidden
 
 ; ---------------------------------------------------------------------------
 ; Init — defer until game is fully loaded, register NPC
@@ -287,6 +288,13 @@ Function HandleShrineEffectApplied(Int shrineWorshipID)
         Return
     EndIf
     HandleShrineWorshipStart(shrineWorshipID)
+EndFunction
+
+Function SetLastShrineDeity(Int shrineWorshipID)
+    wsn_trackerquest_quest tracker = GetTracker()
+    If tracker != None && shrineWorshipID >= 0 && shrineWorshipID < tracker.WSN_DeityName.Length
+        sLastShrineDeityName = tracker.WSN_DeityName[shrineWorshipID]
+    EndIf
 EndFunction
 
 Function HandleShrineWorshipStart(Int shrineWorshipID)

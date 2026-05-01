@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Shrine communion works with non-English Skyrim translations (was parsing localized effect names instead of using form IDs)
+- Shrine worship narration works with non-English Skyrim translations (was parsing localized effect names instead of reading deity name from Papyrus)
 
 ## [2.2.1] - 2026-04-20
 
