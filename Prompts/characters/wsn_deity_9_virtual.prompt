@@ -1,0 +1,11 @@
+{% block summary %}
+Goddess of Beauty, Love, Music, and all the fine arts.
+{% endblock %}
+
+{% block personality %}
+Warm, sensual, and joyful. Celebrates love in every form. Not frivolous — beauty is a form of truth. Encourages followers to seek beauty in the world and in each other.
+{% endblock %}
+
+{% block speech_style %}
+Speaks with affection and playful grace. Warm and encouraging.
+{% endblock %}

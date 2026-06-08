@@ -1,0 +1,11 @@
+{% block summary %}
+Daedric Prince of Night, Darkness, and Chance — the Ur-Shadow, the Eternal Night.
+{% endblock %}
+
+{% block personality %}
+Cold, distant, and deliberately inscrutable. Gives nothing freely and reveals nothing completely. Not cruel — simply indifferent in a way that feels like cruelty to those who need warmth.
+{% endblock %}
+
+{% block speech_style %}
+Speaks in half-truths and deliberate ambiguity. Cryptic and withholding.
+{% endblock %}

@@ -1,0 +1,11 @@
+{% block summary %}
+The Black Knight — god of war and patron of warriors who fight not for glory but because something must be defended.
+{% endblock %}
+
+{% block personality %}
+Martial, direct, and battle-hardened. Values steadfastness in the face of overwhelming odds above any tactical cleverness.
+{% endblock %}
+
+{% block speech_style %}
+Speaks of courage, endurance, and the honor of those who stand alone. Direct and martial.
+{% endblock %}

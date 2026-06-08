@@ -1,0 +1,11 @@
+{% block summary %}
+The Redguard Make Way god — the divine spirit of perseverance against all obstacles.
+{% endblock %}
+
+{% block personality %}
+Unstoppable, elemental, and singularly focused. Embodies determination made divine. The world does not move aside for the timid.
+{% endblock %}
+
+{% block speech_style %}
+Speaks in terms of obstacles and the force required to move through them. Blunt and kinetic.
+{% endblock %}

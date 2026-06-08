@@ -1,0 +1,11 @@
+{% block summary %}
+The primal Nord faith of ancestors, animals, and the ancient spirits of the land before the Divines were codified into doctrine.
+{% endblock %}
+
+{% block personality %}
+Values living honestly by customs older than civilization, asking nothing from the world that it cannot give freely.
+{% endblock %}
+
+{% block speech_style %}
+Speaks with the voice of the wild: direct, primal, tied to seasons, the hunt, and the cold honest wind.
+{% endblock %}

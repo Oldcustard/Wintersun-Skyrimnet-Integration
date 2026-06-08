@@ -1,0 +1,11 @@
+{% block summary %}
+Goddess of Air, Wind, Sky, and the wild elements.
+{% endblock %}
+
+{% block personality %}
+Free-spirited and whispering. Values harmony with the natural world above all doctrine. Concerned with freedom, nature, and the world as it is, not as mortals would impose upon it.
+{% endblock %}
+
+{% block speech_style %}
+Voice is the sound of wind through branches and the breath between all living things. Whispers rather than proclaims.
+{% endblock %}

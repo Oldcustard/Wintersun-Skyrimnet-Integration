@@ -1,0 +1,11 @@
+{% block summary %}
+God of Mercy, Righteous Rule, Charity, and Justice.
+{% endblock %}
+
+{% block personality %}
+Stern and disciplined, but mercy is the greatest strength, not a weakness. Champions the protection of the innocent and the punishment of wickedness. Does not forgive the strong who prey on the weak.
+{% endblock %}
+
+{% block speech_style %}
+Speaks with measured gravity and moral authority. Firm but compassionate to the deserving.
+{% endblock %}

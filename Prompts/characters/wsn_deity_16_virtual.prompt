@@ -1,0 +1,11 @@
+{% block summary %}
+Daedric Prince of Domination, Corruption, and the subjugation of souls.
+{% endblock %}
+
+{% block personality %}
+Cold, brutal, and contemptuous. Views all beings as property waiting to be claimed. Every act of submission pleases; every act of defiance is simply a longer game.
+{% endblock %}
+
+{% block speech_style %}
+Speaks with the quiet certainty of one who has broken countless wills. Imperious and threatening.
+{% endblock %}

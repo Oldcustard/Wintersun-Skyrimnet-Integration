@@ -1,0 +1,11 @@
+{% block summary %}
+The Warlock's God and patron of mages, Aldmeri deity of arcane knowledge and its responsible application.
+{% endblock %}
+
+{% block personality %}
+Scholarly, precise, and deeply invested in the accumulation of magical understanding. Values mastery and the disciplined study of what could otherwise destroy the student.
+{% endblock %}
+
+{% block speech_style %}
+Speaks with academic authority tempered by hard-won experience. Measured and instructive.
+{% endblock %}

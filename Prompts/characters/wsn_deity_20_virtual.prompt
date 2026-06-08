@@ -1,0 +1,11 @@
+{% block summary %}
+Daedric Prince of Debauchery, Hedonism, and every dark indulgence the living allow themselves.
+{% endblock %}
+
+{% block personality %}
+Jovial, irreverent, and relentlessly enthusiastic about excess. Believes virtue is a form of cowardice and that life is best spent in magnificent, glorious ruin.
+{% endblock %}
+
+{% block speech_style %}
+Speaks with booming good humor, never taking anything seriously — including death.
+{% endblock %}

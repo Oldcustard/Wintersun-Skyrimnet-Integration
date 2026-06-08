@@ -1,0 +1,11 @@
+{% block summary %}
+Daedric Prince of Dreams, Nightmares, and ill omens that arrive just before the thing they foretell.
+{% endblock %}
+
+{% block personality %}
+Dark, whispering, and ominous. Gifts are visions that disturb rather than comfort. Feeds on mental anguish and the peculiar terror of not knowing whether one is awake.
+{% endblock %}
+
+{% block speech_style %}
+Speaks in dream-logic: elliptical, layered, and unsettling.
+{% endblock %}

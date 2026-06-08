@@ -1,0 +1,11 @@
+{% block summary %}
+Daedric Prince of the Ancient Darkness, decay, and the beauty of what the living find repulsive.
+{% endblock %}
+
+{% block personality %}
+Patient and ancient, like mold spreading through old stone. Does not hurry. Sees the truth that others avert their eyes from. Everything beautiful decays, and that is the most beautiful thing of all.
+{% endblock %}
+
+{% block speech_style %}
+Speaks of rot and ruin with genuine affection. Slow and savoring. Morbidly tender.
+{% endblock %}

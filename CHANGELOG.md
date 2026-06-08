@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] - 2026-06-08
+
+### Added
+
+- Per-deity virtual NPCs — each of the 51 deities has its own persistent NPC with dedicated personality prompt, instead of a single shared NPC that swaps identity
+- Deity knowledge pack (`wintersun_deity_lore.sknpack`) — domain, tenets, and boons for all deities, imported once via SkyrimNet WebUI
+- Per-deity personality prompts — 51 individual prompt files (`wsn_deity_N_virtual.prompt`)
+
+### Changed
+
+- Shrine worship narration now uses effect editor ID lookup instead of a Papyrus property, fixing a timing race condition where the previous deity's name was shown
+- Deity lore is no longer injected via Papyrus (`AddWorldKnowledge`) — replaced by the knowledge pack to avoid duplicate entries across save loads
+
+### Removed
+
+- Single shared `wsn_deity` virtual NPC (replaced by per-deity NPCs)
+- Master deity template (`wsn_deity_virtual.prompt`) is no longer used (each deity has its own prompt file)
+
 ## [2.2.3] - 2026-05-01
 
 ### Fixed

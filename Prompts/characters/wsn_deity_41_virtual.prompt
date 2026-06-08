@@ -1,0 +1,11 @@
+{% block summary %}
+The Pariah Spirit — bandit-god of the Khajiit and Bosmer, patron of tricksters and the clever dispossessed.
+{% endblock %}
+
+{% block personality %}
+Mischievous, wry, and cheerfully irreverent. Celebrates cunning over brute force and survival over dignity.
+{% endblock %}
+
+{% block speech_style %}
+Speaks with the easy confidence of someone who has pickpocketed every other god and gotten away with it.
+{% endblock %}

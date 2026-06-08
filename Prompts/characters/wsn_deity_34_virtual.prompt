@@ -1,0 +1,11 @@
+{% block summary %}
+The Void, the Great Nothing, the Dread Father — the primordial absence from which all things emerged and to which all things return.
+{% endblock %}
+
+{% block personality %}
+Not a deity in the conventional sense. Not cruel — simply is. All things return in time.
+{% endblock %}
+
+{% block speech_style %}
+Speaks rarely, and when doing so, with the cold weight of oblivion. Terse and absolute.
+{% endblock %}

@@ -1,0 +1,777 @@
+{
+  "skyrimnet_knowledge_pack": {
+    "format_version": 2,
+    "name": "Wintersun Deity Lore",
+    "description": "Domain, tenets, and boons for all 51 Wintersun deities. Each entry is always-injected into the corresponding deity virtual NPC.",
+    "version": "1.0.0",
+    "author": "Wintersun SkyrimNet Integration",
+    "entries": [
+      {
+        "content": "Julianos's domain is Justice, logic, history, scholarship, contradiction. The tenets of Julianos worship are: Master the skills of the Mage. Strive to raise your Magicka. Never openly break the laws of Skyrim. The boons granted by Julianos are: Follower: Spells cost less to cast. Devotee: Spells and scrolls are more effective.",
+        "condition_expr": "get_name(actorUUID) == \"Julianos\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Julianos",
+        "knowledge_key": "wsn_deity_0",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Syrabane's domain is Magic, arcane lore, protection of knowledge. The tenets of Syrabane worship are: Read books that teach new skills. Study a wide variety of spells. High Elves are most deserving of favor. The boons granted by Syrabane are: Follower: More likely to find spell tomes and scrolls on killed enemies. Devotee: Learn all Mage skills faster.",
+        "condition_expr": "get_name(actorUUID) == \"Syrabane\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Syrabane",
+        "knowledge_key": "wsn_deity_1",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Magnus's domain is Magic, the sun, arcane knowledge. The tenets of Magnus worship are: Practice magic successfully while praying. Safeguard the Eye of Magnus. Create enchanted items. The boons granted by Magnus are: Follower: Magicka does not regenerate, but praying rapidly replenishes it and spells cost less. Devotee: Praying auto-casts beneficial self-targeted spells for free.",
+        "condition_expr": "get_name(actorUUID) == \"Magnus\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Magnus",
+        "knowledge_key": "wsn_deity_2",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Jephre's domain is The Green, nature, the songs of nature, the Spinners. The tenets of Jephre worship are: Explore new locations. Read the stories of others. Hunt animals. Wood Elves are most deserving of favor. The boons granted by Jephre are: Follower: Movement speed increased out of combat. Devotee: Stamina regenerates very quickly out of combat, praying brings clear weather.",
+        "condition_expr": "get_name(actorUUID) == \"Jephre\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Jephre",
+        "knowledge_key": "wsn_deity_3",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Mara's domain is Love, compassion, marriage, fertility. The tenets of Mara worship are: Be married. Own one or more houses. Be generous to beggars and children. Receive the blessing of Lover's Comfort. Never openly break the laws of Skyrim. The boons granted by Mara are: Follower: Pray to cure all diseases affecting you or allies. Devotee: Living allies within 40 feet are healed per second.",
+        "condition_expr": "get_name(actorUUID) == \"Mara\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Mara",
+        "knowledge_key": "wsn_deity_4",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Meridia's domain is Light, beauty, energy, initiative, the undead (enemy). The tenets of Meridia worship are: Slay the undead. Never summon the undead or become one. High Elves and those skilled in Restoration are most deserving of favor. The boons granted by Meridia are: Follower: Attacks and spells are more effective against undead. Devotee: Activate an undead opponent to call down a solar strike.",
+        "condition_expr": "get_name(actorUUID) == \"Meridia\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Meridia",
+        "knowledge_key": "wsn_deity_5",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Azura's domain is Dusk and dawn, magic, vanity, the transition between night and day. The tenets of Azura worship are: Trap souls. Explore new locations. Pray only at twilight, preferably outside. Dark Elves and those skilled in Illusion are most deserving of favor. The boons granted by Azura are: Follower: Nearby foes suffer reduced magic resistance. Devotee: Paralyze a weakened opponent in combat.",
+        "condition_expr": "get_name(actorUUID) == \"Azura\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Azura",
+        "knowledge_key": "wsn_deity_6",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Talos's domain is War, governance, the empires of Men. The tenets of Talos worship are: Bring the Civil War to a conclusion. Learn the dragon tongue. Absorb dragon souls. Slay elves and the Thalmor. Never openly break the laws of Skyrim. The boons granted by Talos are: Follower: Attacks and shouts are more effective against elves. Devotee: Shout cooldown halved when enemies die nearby.",
+        "condition_expr": "get_name(actorUUID) == \"Talos\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Talos",
+        "knowledge_key": "wsn_deity_7",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Akatosh's domain is Time, endurance, invincibility, everlasting legitimacy. The tenets of Akatosh worship are: Fulfill your destiny by saving Tamriel. Raise your character level. Absorb dragon souls. Never openly break the laws of Skyrim. The boons granted by Akatosh are: Follower: Attacks, spells and shouts are more effective against dragons. Devotee: Praying resets the cooldown of your most recently used shout and power.",
+        "condition_expr": "get_name(actorUUID) == \"Akatosh\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Akatosh",
+        "knowledge_key": "wsn_deity_8",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Dibella's domain is Beauty, love, arts, music, aesthetics. The tenets of Dibella worship are: Persuade others. Receive the blessing of Lover's Comfort. Find a new Sybil for the Temple of Dibella. Pray only in the nude. Never openly break the laws of Skyrim. The boons granted by Dibella are: Follower: Lover's Comfort also improves all skills. Devotee: Activate a person in combat to make them unequip items and follow you.",
+        "condition_expr": "get_name(actorUUID) == \"Dibella\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Dibella",
+        "knowledge_key": "wsn_deity_9",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Phynaster's domain is The protection of the Summerset Isles, endurance, patience. The tenets of Phynaster worship are: Explore new locations. Find the standing stones of Skyrim. Harvest the fruits of nature. Bretons are most deserving of favor. The boons granted by Phynaster are: Follower: Health, Magicka and Stamina regenerate faster when standing still. Devotee: Teleport back to the last location where you prayed.",
+        "condition_expr": "get_name(actorUUID) == \"Phynaster\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Phynaster",
+        "knowledge_key": "wsn_deity_10",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Mehrunes Dagon's domain is Destruction, change, revolution, energy, ambition. The tenets of Mehrunes Dagon worship are: Slay people who stand in your way. Defile the shrines of enemies. Those skilled in Destruction are most deserving of favor. The boons granted by Mehrunes Dagon are: Follower: Daedric fire drains Magicka while praying; stop at low Magicka for more favor. Devotee: Nearby foes burn and explode on death.",
+        "condition_expr": "get_name(actorUUID) == \"Mehrunes Dagon\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Mehrunes Dagon",
+        "knowledge_key": "wsn_deity_11",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Vaermina's domain is Dreams, nightmares, evil omens, psychological terror. The tenets of Vaermina worship are: Witness the death of those under your mind affecting spells. Kill people in their sleep. Sleep to pray. Those skilled in Illusion are most deserving of favor. The boons granted by Vaermina are: Follower: Mind affecting illusion spells work on higher level targets. Devotee: Activate a sleeping person to summon an illusion companion.",
+        "condition_expr": "get_name(actorUUID) == \"Vaermina\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Vaermina",
+        "knowledge_key": "wsn_deity_12",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Zenithar's domain is Work, commerce, crafts, communication. The tenets of Zenithar worship are: Invest in stores and merchants. Seek out skill training. Make weapons and armor. Never openly break the laws of Skyrim. The boons granted by Zenithar are: Follower: Learn Smithing, Alchemy and Enchanting faster and they are more effective. Devotee: Pray to buy and sell items directly.",
+        "condition_expr": "get_name(actorUUID) == \"Zenithar\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Zenithar",
+        "knowledge_key": "wsn_deity_13",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Boethiah's domain is Deceit, conspiracy, secret plots, assassination, treason. The tenets of Boethiah worship are: Murder the innocent. Strike unseen with sneak attacks. Poison your weapons. Dark Elves are most deserving of favor. The boons granted by Boethiah are: Follower: Attacks deal more damage when fighting only one opponent. Devotee: Invoke Daedric Invisibility; breaking it with a sneak attack deals extra damage.",
+        "condition_expr": "get_name(actorUUID) == \"Boethiah\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Boethiah",
+        "knowledge_key": "wsn_deity_14",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Nocturnal's domain is Night, darkness, luck, shadows, the unknown. The tenets of Nocturnal worship are: Pickpocket Mysterious Coinpurses. Pick locks. Pray only at night, preferably in darkness. Those skilled in Sneak are most deserving of favor. The boons granted by Nocturnal are: Follower: Praying clears non-violent crime bounties. Devotee: Astrally observe the nearest person within 300 feet.",
+        "condition_expr": "get_name(actorUUID) == \"Nocturnal\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Nocturnal",
+        "knowledge_key": "wsn_deity_15",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Molag Bal's domain is Domination, enslavement, the harvesting of souls. The tenets of Molag Bal worship are: Slay people who stand in your way. Trap souls. Live as a vampire and never seek a cure. Those skilled in Destruction are most deserving of favor. The boons granted by Molag Bal are: Follower: Absorb Magicka and Stamina from nearby enemies in combat. Devotee: Banish a person in combat to Coldharbour.",
+        "condition_expr": "get_name(actorUUID) == \"Molag Bal\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Molag Bal",
+        "knowledge_key": "wsn_deity_16",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Kynareth's domain is Air, wind, elements, travel, birds. The tenets of Kynareth worship are: Explore new locations. Strive to raise your Stamina. Receive the Voice of the Sky. Pray only outdoors. Never openly break the laws of Skyrim. The boons granted by Kynareth are: Follower: Movement speed increased in combat. Devotee: Pray to summon a sacred Sabre Cat mount.",
+        "condition_expr": "get_name(actorUUID) == \"Kynareth\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Kynareth",
+        "knowledge_key": "wsn_deity_17",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Mephala's domain is Sex, lies, secret murder, obscure plots. The tenets of Mephala worship are: Poison your weapons. Strike unseen with sneak attacks. Intimidate the weak. Dark Elves are most deserving of favor. The boons granted by Mephala are: Follower: Sneak attacks deal more damage from behind. Devotee: Seize control of the nearest person to fight for you.",
+        "condition_expr": "get_name(actorUUID) == \"Mephala\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Mephala",
+        "knowledge_key": "wsn_deity_18",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Arkay's domain is Life, death, the cycle of souls, burial rites. The tenets of Arkay worship are: Slay the undead and their summoners. Perform Arkay's Rites. Never openly break the laws of Skyrim. Never summon the undead or become one. The boons granted by Arkay are: Follower: Regenerate Health based on missing Health. Devotee: Revive with full Health upon taking fatal damage.",
+        "condition_expr": "get_name(actorUUID) == \"Arkay\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Arkay",
+        "knowledge_key": "wsn_deity_19",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Sanguine's domain is Hedonism, debauchery, dark reveries. The tenets of Sanguine worship are: Make mischief and commit crimes worthy of a bounty. Indulge in mead, wine and ale. Find your own way out of jail. The boons granted by Sanguine are: Follower: Health, Magicka and Stamina regenerate faster while a potion or food is active. Devotee: Pray in combat to force nearby hostiles to dance.",
+        "condition_expr": "get_name(actorUUID) == \"Sanguine\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Sanguine",
+        "knowledge_key": "wsn_deity_20",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Malacath's domain is The spurned, the ostracised, the betrayed, the bloody oath. The tenets of Malacath worship are: Defeat epic foes. Improve weapons and armor. Never commit a crime against the strongholds. Orcs and those skilled in Smithing are most deserving of favor. The boons granted by Malacath are: Follower: Power attacks deal more damage. Devotee: When enemies die nearby, their killer is healed by overkill damage dealt.",
+        "condition_expr": "get_name(actorUUID) == \"Malacath\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Malacath",
+        "knowledge_key": "wsn_deity_21",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Stendarr's domain is Mercy, charity, well-earned luck, righteous might. The tenets of Stendarr worship are: Clear dungeons of evil. Slay daedra and the undead. Complete side quests for the people of Skyrim. Never openly break the laws of Skyrim. The boons granted by Stendarr are: Follower: Take less attack damage from daedra and undead. Devotee: Spend favor to gain improved attack, defense and healing.",
+        "condition_expr": "get_name(actorUUID) == \"Stendarr\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Stendarr",
+        "knowledge_key": "wsn_deity_22",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Auriel's domain is Time, the light of the heavens, the Elven aspects of Akatosh. The tenets of Auriel worship are: Fulfill your destiny by saving Tamriel. Master all skills. Become Champion at the sacred Chantry. High Elves are most deserving of favor. The boons granted by Auriel are: Follower: Learn all skills faster. Devotee: Level 100 skills are improved further.",
+        "condition_expr": "get_name(actorUUID) == \"Auriel\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Auriel",
+        "knowledge_key": "wsn_deity_23",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Peryite's domain is Tasks, pestilence, order among the lowest of Daedra. The tenets of Peryite worship are: Catch as many diseases as you can. Accept Gifts of pestilence. Pray only while diseased. Never accept a cure for your afflictions. The boons granted by Peryite are: Follower: Learn all skills faster. Devotee: Inflict all your diseases on a living opponent plus disease damage per second.",
+        "condition_expr": "get_name(actorUUID) == \"Peryite\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Peryite",
+        "knowledge_key": "wsn_deity_24",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Hircine's domain is The hunt, sport, the Great Game, the Chase. The tenets of Hircine worship are: Slay the living in open combat, especially those stronger. Live as a werewolf. Pray in the wild. Those skilled in Light Armor are most deserving of favor. The boons granted by Hircine are: Follower: Double attack damage to living targets with low Health. Devotee: Invoke a Hunt to reveal and expose nearby living targets.",
+        "condition_expr": "get_name(actorUUID) == \"Hircine\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Hircine",
+        "knowledge_key": "wsn_deity_25",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Xarxes's domain is Ancestry, secret knowledge, the scribe of Auri-El. The tenets of Xarxes worship are: Explore new locations. Read the stories of others. Study a wide variety of spells. Bretons are most deserving of favor. The boons granted by Xarxes are: Follower: Reading a Skill Book while praying grants an extra Skill Point. Devotee: Ascend in a trance, revealing all characters in a large radius.",
+        "condition_expr": "get_name(actorUUID) == \"Xarxes\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Xarxes",
+        "knowledge_key": "wsn_deity_26",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Shor's domain is The underworld, the dead, mankind, Sovngarde. The tenets of Shor worship are: Fulfill your destiny by saving Tamriel. Master the skills of the Warrior. Slay elves. Defeat epic foes. The boons granted by Shor are: Follower: Take less damage and stagger from elves. Devotee: When entering combat with a mighty foe, a Shield-Thane assists you.",
+        "condition_expr": "get_name(actorUUID) == \"Shor\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Shor",
+        "knowledge_key": "wsn_deity_27",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Hermaeus Mora's domain is Knowledge, memory, the scrying of the tides of Fate. The tenets of Hermaeus Mora worship are: Read Eldritch Pages and bind them into Eldritch Tomes. Read books that teach new skills. Become Champion at the Summit of Apocrypha. The boons granted by Hermaeus Mora are: Follower: Find Eldritch Pages on corpses; bind into Tomes that improve magic and shouts. Devotee: Pray to permanently raise a skill.",
+        "condition_expr": "get_name(actorUUID) == \"Hermaeus Mora\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Hermaeus Mora",
+        "knowledge_key": "wsn_deity_28",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Clavicus Vile's domain is Power, wishes, trickery, bargains. The tenets of Clavicus Vile worship are: Pray to accept a Pact and complete it as written within the allotted time. Never break or ignore Pacts. The boons granted by Clavicus Vile are: Follower: Conjuration spells last longer. Devotee: Pray to make a Wish, permanently gaining an additional perk point.",
+        "condition_expr": "get_name(actorUUID) == \"Clavicus Vile\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Clavicus Vile",
+        "knowledge_key": "wsn_deity_29",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Namira's domain is Ancient darkness, revulsion, the foul, cannibalism. The tenets of Namira worship are: Murder the innocent. Poison your weapons. Eat the corpses of the dead with the Ring. Be generous to beggars. The boons granted by Namira are: Follower: Reduces Poison Resistance of all nearby. Devotee: Poisoning a person attracts insects, reducing armor and dealing disease damage.",
+        "condition_expr": "get_name(actorUUID) == \"Namira\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Namira",
+        "knowledge_key": "wsn_deity_30",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Jyggalag's domain is Order, logic, deductive reasoning, natural law. The tenets of Jyggalag worship are: Activate Obelisks of Order. Clear dungeons of evil. Slay daedra. Never serve Sheogorath. Those skilled in Heavy Armor are most deserving of favor. The boons granted by Jyggalag are: Follower: Obelisks of Order grant Health, Magicka and Stamina. Devotee: Trap an opponent in an inert but invulnerable state.",
+        "condition_expr": "get_name(actorUUID) == \"Jyggalag\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Jyggalag",
+        "knowledge_key": "wsn_deity_31",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Trinimac's domain is Strength, honour, the warrior Aedra. The tenets of Trinimac worship are: Slay humans. Defeat epic foes. Never accept Boethiah's blessing or serve her. Those skilled in Two-Handed are most deserving of favor. The boons granted by Trinimac are: Follower: Attacks deal more damage to humans. Devotee: Become ethereal and invulnerable until your next attack.",
+        "condition_expr": "get_name(actorUUID) == \"Trinimac\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Trinimac",
+        "knowledge_key": "wsn_deity_32",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Sheogorath's domain is Madness, creativity, the mind. The tenets of Sheogorath worship are: Pray often and receive Touch of Madness. Never disrespect cheese. The boons granted by Sheogorath are: Follower: Praying grants a random Touch of Madness. Devotee: Receive a Touch of Madness whenever you enter combat.",
+        "condition_expr": "get_name(actorUUID) == \"Sheogorath\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Sheogorath",
+        "knowledge_key": "wsn_deity_33",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Sithis's domain is The Void, change, entropy, the Dark Brotherhood. The tenets of Sithis worship are: Murder the innocent. Pray while sacrificing a Human Heart or Flesh. Send victims to the Void. Argonians are most deserving of favor. The boons granted by Sithis are: Follower: Harder to detect nearby; chance to find Human Hearts on kills. Devotee: Turn a door into a Void portal that pulls in and kills unaware targets.",
+        "condition_expr": "get_name(actorUUID) == \"Sithis\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Sithis",
+        "knowledge_key": "wsn_deity_34",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Z'en's domain is Toil, payment in kind, the merchant lord. The tenets of Z'en worship are: Bribe people as needed. Harvest the fruits of nature. Eat as much food as you want. Those skilled in Speech are most deserving of favor. The boons granted by Z'en are: Follower: Beneficial potions and food last longer and are better if consumed while praying. Devotee: Pray to open unlimited extradimensional storage.",
+        "condition_expr": "get_name(actorUUID) == \"Z'en\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Z'en",
+        "knowledge_key": "wsn_deity_35",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Satakal's domain is The world-eating serpent, the beginning and end of all things. The tenets of Satakal worship are: Fulfill your destiny by saving Tamriel. Strive to raise your Health. Absorb dragon souls. The boons granted by Satakal are: Follower: Shrine blessings from other gods are more effective and last longer. Devotee: Pray to become reborn, moving points between attributes.",
+        "condition_expr": "get_name(actorUUID) == \"Satakal\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Satakal",
+        "knowledge_key": "wsn_deity_36",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Tall Papa's domain is The overseer of all spirits, the highest of the Yokudan gods, endurance. The tenets of Tall Papa worship are: Touch the Fractures scattered around Skyrim. Create enchanted items. Those skilled in Enchanting are most deserving of favor. The boons granted by Tall Papa are: Follower: Weapon enchantments drain less charge. Devotee: On death, enter ethereal state; if combat ends in time, revive.",
+        "condition_expr": "get_name(actorUUID) == \"Tall Papa\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Tall Papa",
+        "knowledge_key": "wsn_deity_37",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "the HoonDing's domain is Perseverance, the spirit of going forward, movement against all odds. The tenets of the HoonDing worship are: Slay your foes in open combat, especially those stronger. Those skilled in One-Handed are most deserving of favor. The boons granted by the HoonDing are: Follower: Staggering an opponent reduces their armor. Devotee: Chance to resist stagger from attacks and bashes.",
+        "condition_expr": "get_name(actorUUID) == \"the HoonDing\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN the HoonDing",
+        "knowledge_key": "wsn_deity_38",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "the Animal Gods's domain is The old animal god traditions; the Bear, the Crow, the Fox, the Hawk, the Snake, the Wolf. The tenets of the Animal Gods worship are: Slay people who stand in your way. Absorb dragon souls. Assume powers through prayer. Nords are most deserving of favor. The boons granted by the Animal Gods are: Follower: Sacrifice gemstones while praying to assume animal god powers. Devotee: Assume the powers of the Dragon.",
+        "condition_expr": "get_name(actorUUID) == \"the Animal Gods\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN the Animal Gods",
+        "knowledge_key": "wsn_deity_40",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Baan Dar's domain is Thieves, the bandit, clever tricks, the clever merchant. The tenets of Baan Dar worship are: Pick locks and pockets successfully. Khajiit and those skilled in Archery are most deserving of favor. The boons granted by Baan Dar are: Follower: Buying from other races costs more, but pickpocketing is easier. Devotee: Put skooma in people's inventory, then pray to ignite them.",
+        "condition_expr": "get_name(actorUUID) == \"Baan Dar\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Baan Dar",
+        "knowledge_key": "wsn_deity_41",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Ebonarm's domain is War, warriors, the Black Knight. The tenets of Ebonarm worship are: Slay daedra. Defeat epic foes. Complete miscellaneous quests. Those skilled in Block are most deserving of favor. The boons granted by Ebonarm are: Follower: Attacks are more effective against daedra and their summoners. Devotee: Reduces armor of nearby enemies; you gain the total amount.",
+        "condition_expr": "get_name(actorUUID) == \"Ebonarm\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Ebonarm",
+        "knowledge_key": "wsn_deity_42",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Rajhin's domain is Thieves, rogues, the master thief, luck. The tenets of Rajhin worship are: Explore new locations. Bribe people. Pick locks. Those skilled in Lockpicking are most deserving of favor. The boons granted by Rajhin are: Follower: Find additional gold in containers. Devotee: Pray to break a lock within 20 feet.",
+        "condition_expr": "get_name(actorUUID) == \"Rajhin\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Rajhin",
+        "knowledge_key": "wsn_deity_43",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Riddle'Thar's domain is The cosmic order of the moons, the Two-Moons Dance, Khajiiti faith. The tenets of Riddle'Thar worship are: Master skills of the Warrior, Thief and Mage equally. Strive to raise Health, Magicka and Stamina. Pray only at night. The boons granted by Riddle'Thar are: Follower: All skills improved. Devotee: An ancient Mane grants a blessing appropriate for upcoming challenges.",
+        "condition_expr": "get_name(actorUUID) == \"Riddle'Thar\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Riddle'Thar",
+        "knowledge_key": "wsn_deity_44",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Morwha's domain is Love, fertility, the mother goddess of the Yokudan pantheon. The tenets of Morwha worship are: Be married. Receive the blessing of Lover's Comfort. Harvest the fruits of nature. Eat as much food as you want. The boons granted by Morwha are: Follower: Praying restores Health for you and nearby allies. Devotee: Praying blesses you with enchanted fruit.",
+        "condition_expr": "get_name(actorUUID) == \"Morwha\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Morwha",
+        "knowledge_key": "wsn_deity_45",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Leki's domain is Sword-craft, the sublime art of the blade, the Saint of the Spirit Sword. The tenets of Leki worship are: Bring the Civil War to a conclusion. Make and improve weapons. Master the skills of the Warrior. The boons granted by Leki are: Follower: Power attacks ignore armor. Devotee: Spend favor to gain increased melee damage for 10 minutes.",
+        "condition_expr": "get_name(actorUUID) == \"Leki\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Leki",
+        "knowledge_key": "wsn_deity_46",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "the Hist's domain is The ancient trees of Black Marsh, Argonian souls, the Hist-sap. The tenets of the Hist worship are: Explore new locations. Slay daedra. Pray only outdoors. Never summon a daedra. The boons granted by the Hist are: Follower: Pray to gain a bonus to all attributes. Devotee: Absorb Magicka and Stamina of dead creatures and people nearby.",
+        "condition_expr": "get_name(actorUUID) == \"the Hist\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN the Hist",
+        "knowledge_key": "wsn_deity_47",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "St. Alessia's domain is The first Empress of Men, freedom, salvation, the Alessian Order. The tenets of St. Alessia worship are: Have a follower at your side. Slay elves. Receive the blessing of a Divine. The boons granted by St. Alessia are: Follower: Pray for a Divine blessing of your choice. Devotee: Talk to non-hostile humans to make them a friend and potential follower.",
+        "condition_expr": "get_name(actorUUID) == \"St. Alessia\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN St. Alessia",
+        "knowledge_key": "wsn_deity_48",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "Mannimarco's domain is Necromancy, undeath, the Worm Cult. The tenets of Mannimarco worship are: Trap souls. Pray only at night. Never accept Arkay's blessing. Those skilled in Conjuration are most deserving of favor. The boons granted by Mannimarco are: Follower: Undead conjured at night last longer. Devotee: Allied conjured undead deal more damage and regenerate Health.",
+        "condition_expr": "get_name(actorUUID) == \"Mannimarco\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN Mannimarco",
+        "knowledge_key": "wsn_deity_49",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "the All-Maker's domain is The Skaal concept of the divine force that created all things. The tenets of the All-Maker worship are: Cleanse the All-Maker Stones. Hunt animals. Explore new locations. Pray only outdoors. Nords are most deserving of favor. The boons granted by the All-Maker are: Follower: Healing spells restore more Health. Devotee: After using an All-Maker Stone power, pray to have it restored.",
+        "condition_expr": "get_name(actorUUID) == \"the All-Maker\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN the All-Maker",
+        "knowledge_key": "wsn_deity_50",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      },
+      {
+        "content": "the Magna-Ge's domain is Stars, the starry heavens, Magnus's kin who fled Mundus. The tenets of the Magna-Ge worship are: Create enchanted items. Explore new locations. Pray only outdoors at night. High Elves and those skilled in Alteration are most deserving of favor. The boons granted by the Magna-Ge are: Follower: Gain weapon charge per second. Devotee: Let the Magna-Ge carry you to a location within line of sight.",
+        "condition_expr": "get_name(actorUUID) == \"the Magna-Ge\"",
+        "always_inject": true,
+        "importance": 0.9,
+        "display_name": "WSN the Magna-Ge",
+        "knowledge_key": "wsn_deity_51",
+        "tags": [
+          "wintersun",
+          "deity"
+        ],
+        "type": "KNOWLEDGE",
+        "emotion": "",
+        "location": ""
+      }
+    ],
+    "npc_groups": []
+  }
+}

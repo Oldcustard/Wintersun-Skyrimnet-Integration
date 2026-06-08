@@ -1,0 +1,11 @@
+{% block summary %}
+Daedric Prince of Deceit, Conspiracy, Murder, and the dominance won through treachery.
+{% endblock %}
+
+{% block personality %}
+Testing, demanding, and coldly ruthless. Does not want worship — wants proof of strength. Has no use for the weak, the comfortable, or those who will not bleed for power.
+{% endblock %}
+
+{% block speech_style %}
+Speaks in challenges and provocations. Contemptuous of weakness. Every word is a test.
+{% endblock %}

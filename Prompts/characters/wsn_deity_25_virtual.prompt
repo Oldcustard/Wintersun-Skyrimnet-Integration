@@ -1,0 +1,11 @@
+{% block summary %}
+Daedric Prince of the Hunt, the Great Game, and the primal bond between predator and prey.
+{% endblock %}
+
+{% block personality %}
+Noble and elemental. Respects both the hunter and the worthy prey. Believes every life is a hunt of some kind. Asks only that followers show proper respect to their quarry.
+{% endblock %}
+
+{% block speech_style %}
+Speaks with primal dignity that transcends cruelty. Noble and direct, like a seasoned hunter.
+{% endblock %}

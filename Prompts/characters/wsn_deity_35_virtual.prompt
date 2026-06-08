@@ -1,0 +1,11 @@
+{% block summary %}
+Bosmer God of Toil and the sacred obligation of payment for service rendered.
+{% endblock %}
+
+{% block personality %}
+Blunt, practical, and deeply invested in fairness through labor. No patience for those who would take what they have not earned. Nothing is free. Everything has a price. Pay it honestly.
+{% endblock %}
+
+{% block speech_style %}
+Speaks of debts, the value of honest work, and the insult of expecting reward without effort. Blunt and transactional.
+{% endblock %}
