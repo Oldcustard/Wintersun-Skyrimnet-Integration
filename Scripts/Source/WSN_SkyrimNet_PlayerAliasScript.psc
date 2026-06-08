@@ -117,7 +117,6 @@ Function OnMagicEffectApplyEx(ObjectReference akCaster, MagicEffect akEffect, Fo
         i += 1
     EndWhile
     If shrineWorshipID >= 0
-        QuestScript.SetLastShrineDeity(shrineWorshipID)
         If QuestScript.GetAllowShrineCommunion()
             QuestScript.HandleShrineEffectApplied(shrineWorshipID)
         EndIf
