@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.3] - 2026-05-01
+
+### Fixed
+
+- Shrine worship narration works with non-English Skyrim translations (was parsing localized effect names instead of reading deity name from Papyrus)
+
+## [2.2.2] - 2026-05-01
+
+### Fixed
+
+- Shrine communion works with non-English Skyrim translations (was parsing localized effect names instead of using form IDs)
+- Shrine worship narration works with non-English Skyrim translations (was parsing localized effect names instead of reading deity name from Papyrus)
+
 ## [2.2.1] - 2026-04-20
 
 ### Fixed

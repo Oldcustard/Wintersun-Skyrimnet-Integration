@@ -106,9 +106,20 @@ Function OnMagicEffectApplyEx(ObjectReference akCaster, MagicEffect akEffect, Fo
         EndIf
         Return
     EndIf
-    ; Shrine request: cast on player from shrine (caster is not the player)
-    If QuestScript.GetAllowShrineCommunion()
-        QuestScript.HandleShrineEffectApplied(akEffect)
+    ; Shrine request: find worshipID by matching effect in ShrineRequestEffects[]
+    Int shrineWorshipID = -1
+    Int i = 0
+    While i < ShrineRequestEffects.Length
+        If ShrineRequestEffects[i] == akEffect
+            shrineWorshipID = i
+            i = ShrineRequestEffects.Length
+        EndIf
+        i += 1
+    EndWhile
+    If shrineWorshipID >= 0
+        If QuestScript.GetAllowShrineCommunion()
+            QuestScript.HandleShrineEffectApplied(shrineWorshipID)
+        EndIf
     EndIf
 EndFunction
 

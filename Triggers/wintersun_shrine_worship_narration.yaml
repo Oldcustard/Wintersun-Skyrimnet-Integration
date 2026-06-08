@@ -14,7 +14,112 @@ eventCriteria:
 
 response:
   type: "direct_narration"
-  content: "*{{ player_name }} approaches the shrine and bows their head in reverence to {{ event_json.effect | replace(\"Do you want to worship \", \"\") | replace(\"?\", \"\") }}.*"
+  content: |-
+    {% set effectId = event_json.effect_editor_id %}
+    {% if effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Julianos" %}
+      {% set deityName = "Julianos" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Syrabane" %}
+      {% set deityName = "Syrabane" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Magnus" %}
+      {% set deityName = "Magnus" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Jephre" %}
+      {% set deityName = "Jephre" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Mara" %}
+      {% set deityName = "Mara" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Meridia" %}
+      {% set deityName = "Meridia" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Azura" %}
+      {% set deityName = "Azura" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Talos" %}
+      {% set deityName = "Talos" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Akatosh" %}
+      {% set deityName = "Akatosh" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Dibella" %}
+      {% set deityName = "Dibella" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Phynaster" %}
+      {% set deityName = "Phynaster" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Mehrunes" %}
+      {% set deityName = "Mehrunes Dagon" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Vaermina" %}
+      {% set deityName = "Vaermina" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Zenithar" %}
+      {% set deityName = "Zenithar" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Boethiah" %}
+      {% set deityName = "Boethiah" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Nocturnal" %}
+      {% set deityName = "Nocturnal" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_MolagBal" %}
+      {% set deityName = "Molag Bal" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Kynareth" %}
+      {% set deityName = "Kynareth" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Mephala" %}
+      {% set deityName = "Mephala" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Arkay" %}
+      {% set deityName = "Arkay" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Sanguine" %}
+      {% set deityName = "Sanguine" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Malacath" %}
+      {% set deityName = "Malacath" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Stendarr" %}
+      {% set deityName = "Stendarr" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Auriel" %}
+      {% set deityName = "Auriel" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Peryite" %}
+      {% set deityName = "Peryite" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Hircine" %}
+      {% set deityName = "Hircine" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Xarxes" %}
+      {% set deityName = "Xarxes" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Divine_Shor" %}
+      {% set deityName = "Shor" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Herma" or effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Herma_NoAutocast" %}
+      {% set deityName = "Hermaeus Mora" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Clavicus" %}
+      {% set deityName = "Clavicus Vile" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Namira" %}
+      {% set deityName = "Namira" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Jyggalag" %}
+      {% set deityName = "Jyggalag" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Trinimac" %}
+      {% set deityName = "Trinimac" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Daedra_Sheogorath" %}
+      {% set deityName = "Sheogorath" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Sithis" %}
+      {% set deityName = "Sithis" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Zen" %}
+      {% set deityName = "Z'en" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Redguard_Satakal" %}
+      {% set deityName = "Satakal" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Redguard_TallPapa" %}
+      {% set deityName = "Tall Papa" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Redguard_HoonDing" %}
+      {% set deityName = "the HoonDing" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Totems" %}
+      {% set deityName = "the Animal Gods" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_BaanDar" %}
+      {% set deityName = "Baan Dar" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Ebonarm" %}
+      {% set deityName = "Ebonarm" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Khajiit_Rajhin" %}
+      {% set deityName = "Rajhin" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Khajiit_RiddleThar" %}
+      {% set deityName = "Riddle'Thar" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Redguard_Morwha" %}
+      {% set deityName = "Morwha" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Redguard_Leki" %}
+      {% set deityName = "Leki" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_TheHist" or effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_TheHist_NoAutocast" %}
+      {% set deityName = "the Hist" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_StAlessia" %}
+      {% set deityName = "St. Alessia" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_Mannimarco" %}
+      {% set deityName = "Mannimarco" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_TheAllMaker" %}
+      {% set deityName = "the All-Maker" %}
+    {% elif effectId == "WSN_Shrine_Effect_WorshipRequest_Misc_TheMagnaGe" %}
+      {% set deityName = "the Magna-Ge" %}
+    {% endif %}
+    {% if deityName %}*{{ player_name }} approaches the shrine and bows their head in reverence to {{ deityName }}.*{% endif %}
 
 audience: "nearby_npcs"
 enabled: true
