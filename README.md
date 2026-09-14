@@ -27,13 +27,17 @@ Activating any deity's shrine starts a brief conversation with that deity — ev
 ## Requirements
 
 - [Wintersun – Faiths of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/22506)
-- SkyrimNet
+- SkyrimNet **Beta 25 (0.25.0) or newer**
 - SKSE
 - [PO3 Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854)
 
 ## Installation
 
 Install with a mod manager (MO2 / Vortex), or extract directly into your `Skyrim Special Edition/Data/` folder. Enable `WSN_SkyrimNet_Integration.esp` in your load order. The plugin is ESL-flagged and does not consume a load order slot.
+
+Content (prompts, triggers, deity knowledge) ships as a SkyrimNet **external plugin layer** (`SKSE/Plugins/SkyrimNet/external/oldcustard.wintersun/`). SkyrimNet registers it automatically at start-up — verify it appears on the dashboard's **Installed Plugins** page with an **External** badge.
+
+> **Updating from 3.0.0 or earlier:** old loose files under `SKSE/Plugins/SkyrimNet/prompts/` and `config/triggers/` are no longer read by Beta 25. If you edited any of them for personal use, use **Plugins > Import Old Content** to carry the edits into your own layer; otherwise they can be deleted. The deity knowledge pack no longer needs a manual import — remove the old manually-imported entries to avoid duplicates.
 
 ## Configuration
 
@@ -51,7 +55,7 @@ Settings are available in the SkyrimNet WebUI under the **Wintersun Integration*
 
 **Deity persona prompt not applied** — A SkyrimNet issue causes save-specific bios to override mod-provided character prompts with blank content, so deities speak without unique personality for now.
 
-> **Workaround:** Copy `wsn_deity_virtual.prompt` from `SKSE/Plugins/SkyrimNet/prompts/characters/` into `SKSE/Plugins/SkyrimNet/prompts/_saves/<your_save_id>/characters/`. Your save ID is the folder name inside `_saves/`.
+> **Workaround:** Copy `wsn_deity_virtual.prompt` from `SKSE/Plugins/SkyrimNet/external/oldcustard.wintersun/prompts/characters/` into `SKSE/Plugins/SkyrimNet/prompts/_saves/<your_save_id>/characters/`. Your save ID is the folder name inside `_saves/`.
 
 ## Planned
 

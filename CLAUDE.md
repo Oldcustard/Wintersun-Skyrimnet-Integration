@@ -82,7 +82,7 @@ When the player prays (as a Devotee by default, configurable via `require_devote
 
 ### SkyrimNet Trigger YAMLs
 
-- Triggers in `Triggers/` use Inja templates with `at()` for 0-based array indexing (not `loop.index` which is 1-based)
+- Triggers in `Plugin/oldcustard.wintersun/triggers/` use Inja templates with `at()` for 0-based array indexing (not `loop.index` which is 1-based)
 - Deity name lookup pattern: `get_script_property` → `at(deityNames, worshipID)`
 - Inja uses `elif` (not `elsif` — this was a bug that broke the deity prompt)
 - String literals in Inja filter args require double quotes
@@ -90,18 +90,28 @@ When the player prays (as a Devotee by default, configurable via `require_devote
 
 ### Packaging
 
-One zip file built manually with Python's `zipfile` module (no build script):
+One zip file built with `build_package.py` (Python 3, stdlib only):
 
-- **Full** (`Wintersun-SkyrimNet-Integration.zip`): scripts, seq, ESP, working triggers, character bio prompt, deity persona prompt, manifest.yaml. Excludes: switch/abandonment triggers (broken).
+```bash
+python build_package.py
+```
+
+**SkyrimNet Beta 25+ layout** — content ships as an external plugin layer (a folder with `manifest.json`), not loose files. Beta 25 no longer reads `prompts/` or `config/triggers/`. Source of truth: `Plugin/oldcustard.wintersun/` (folder name = manifest `id`).
 
 File mapping into zip:
+- `WSN_SkyrimNet_Integration.esp` → root
 - `Scripts/*.pex` → `Scripts/`
 - `Seq/*.seq` → `Seq/`
-- `Triggers/*.yaml` (working only) → `SKSE/Plugins/SkyrimNet/config/triggers/`
-- `Prompts/characters/*.prompt` → `SKSE/Plugins/SkyrimNet/prompts/characters/`
-- `Prompts/0350_wintersun.prompt` → `SKSE/Plugins/SkyrimNet/prompts/submodules/character_bio/`
-- `manifest.yaml` → `SKSE/Plugins/SkyrimNet/config/plugins/Wintersun Integration/manifest.yaml`
-- `*.esp` → root
+- `Plugin/oldcustard.wintersun/**` → `SKSE/Plugins/SkyrimNet/external/oldcustard.wintersun/`
+  - `manifest.json` — plugin id `oldcustard.wintersun`, semver `version`, `min_skyrimnet_version: 0.25.0`
+  - `prompts/characters/*.prompt` — deity persona prompts
+  - `prompts/submodules/character_bio/0350_wintersun.prompt` — character bio submodule
+  - `triggers/*.yaml` — build script excludes switch/abandonment triggers (broken)
+  - `knowledge/wintersun_deity_lore.sknpack` — persistent world knowledge, auto-projected (no manual import)
+- `manifest.yaml` (settings schema) → `SKSE/Plugins/SkyrimNet/config/plugins/Wintersun Integration/manifest.yaml`
+- `Voice Effects/*.yaml` → `SKSE/Plugins/SkyrimNet/config/voice_effects/` — sources live on `feature/voice-effects`; the build script skips them (with a notice) when the dir is absent
+
+Migration reference: `docs/modding/MIGRATING_TO_BETA25.md` in the SkyrimNet-GamePlugin repo.
 
 ### ESPFE
 

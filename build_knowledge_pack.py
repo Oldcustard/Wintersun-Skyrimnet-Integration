@@ -187,9 +187,10 @@ pack = {
     }
 }
 
-os.makedirs("Knowledge", exist_ok=True)
-with open("Knowledge/wintersun_deity_lore.sknpack", "w", encoding="utf-8") as f:
+out_dir = os.path.join("Plugin", "oldcustard.wintersun", "knowledge")
+os.makedirs(out_dir, exist_ok=True)
+with open(os.path.join(out_dir, "wintersun_deity_lore.sknpack"), "w", encoding="utf-8") as f:
     json.dump(pack, f, indent=2, ensure_ascii=False)
 
 print(f"Created knowledge pack with {len(entries)} entries")
-print(f"Total size: {os.path.getsize('Knowledge/wintersun_deity_lore.sknpack'):,} bytes")
+print(f"Total size: {os.path.getsize(os.path.join(out_dir, 'wintersun_deity_lore.sknpack')):,} bytes")

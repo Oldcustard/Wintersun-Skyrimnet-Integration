@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - 2026-09-12
+
+### Changed
+
+- Migrated to the SkyrimNet Beta 25 plugin structure — prompts, triggers, and the knowledge pack now ship as an external plugin layer at `SKSE/Plugins/SkyrimNet/external/oldcustard.wintersun/` with a `manifest.json`, instead of loose files under `prompts/` and `config/triggers/` (folders Beta 25 no longer reads)
+- The deity knowledge pack now loads automatically as persistent world knowledge from the plugin's `knowledge/` folder — no more manual import via the World Knowledge page
+- Packaging is now done by `build_package.py` (stdlib-only zip builder) instead of an ad-hoc manual build
+
+### Requirements
+
+- SkyrimNet Beta 25 (0.25.0) or newer
+
 ## [3.0.0] - 2026-06-08
 
 ### Added
