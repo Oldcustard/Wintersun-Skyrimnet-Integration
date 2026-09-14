@@ -1,0 +1,14 @@
+{
+  "id": "oldcustard.wintersun",
+  "title": "Skyrimnet Wintersun Integration",
+  "author": "oldcustard",
+  "version": "3.1.0",
+  "min_skyrimnet_version": "0.25.0",
+  "mods": [
+    {
+      "name": "Wintersun - Faiths of Skyrim",
+      "file": "Wintersun - Faiths of Skyrim.esp",
+      "required": true
+    }
+  ]
+}

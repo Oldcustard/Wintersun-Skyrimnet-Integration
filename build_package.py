@@ -50,6 +50,9 @@ def main():
     esp = os.path.join(ROOT, "WSN_SkyrimNet_Integration.esp")
     if not os.path.isfile(esp):
         fail("WSN_SkyrimNet_Integration.esp not built yet (run the toolkit first)")
+    manifest = os.path.join(PLUGIN_DIR, "manifest.json")
+    if not os.path.isfile(manifest):
+        fail("plugin manifest missing: " + manifest)
 
     print("Building " + os.path.basename(OUT_ZIP))
     with zipfile.ZipFile(OUT_ZIP, "w", zipfile.ZIP_DEFLATED) as zf:

@@ -96,13 +96,14 @@ One zip file built with `build_package.py` (Python 3, stdlib only):
 python build_package.py
 ```
 
-**SkyrimNet Beta 25+ layout** — content ships as an external plugin layer (a content folder under `external/`), not loose files. Beta 25 no longer reads `prompts/` or `config/triggers/`. Source of truth: `Plugin/oldcustard.wintersun/` (folder name = plugin id). No `manifest.json` is shipped — the plugin is published on the Hub as a **listing** (a catalogue entry linking to the mod page), which requires none.
+**SkyrimNet Beta 25+ layout** — content ships as an external plugin layer (a content folder under `external/`), not loose files. Beta 25 no longer reads `prompts/` or `config/triggers/`. Source of truth: `Plugin/oldcustard.wintersun/` (folder name = plugin `id`). The `manifest.json` carries only the mandatory fields (`author`, `id`, `title`, `version`, `min_skyrimnet_version`) plus `mods` — description/tagline/tags are optional for external layers and omitted. The Hub entry is a **listing** (catalogue entry linking to the mod page).
 
 File mapping into zip:
 - `WSN_SkyrimNet_Integration.esp` → root
 - `Scripts/*.pex` → `Scripts/`
 - `Seq/*.seq` → `Seq/`
 - `Plugin/oldcustard.wintersun/**` → `SKSE/Plugins/SkyrimNet/external/oldcustard.wintersun/`
+  - `manifest.json` — mandatory fields only
   - `prompts/characters/*.prompt` — deity persona prompts
   - `prompts/submodules/character_bio/0350_wintersun.prompt` — character bio submodule
   - `triggers/*.yaml` — build script excludes switch/abandonment triggers (broken)
