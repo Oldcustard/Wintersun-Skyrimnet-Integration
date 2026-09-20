@@ -113,6 +113,19 @@ File mapping into zip:
 
 Migration reference: `docs/modding/MIGRATING_TO_BETA25.md` in the SkyrimNet-GamePlugin repo.
 
+### Validation (devkit)
+
+Validate the plugin layer with the SkyrimNet devkit (`E:\Libraries\Documents\Skyrim\SkyrimNet Plugins\Skyrimnet Devkit`) before any release:
+
+```bash
+& "E:\Libraries\Documents\Skyrim\SkyrimNet Plugins\Skyrimnet Devkit\tools\content-validate.exe" "./Plugin/oldcustard.wintersun"
+```
+
+- `"ok": true` is the gate — fix all `errors` before packaging.
+- The `unresolved` entries for `get_script_property` / `at` / `is_player` are expected: they are runtime-registered template built-ins (used by SkyrimNet's own base-layer prompts).
+- `.sknpack` must be `format_version` 3 with a per-entry `key` field (`[a-z0-9_-]`, 1–64 chars) — NOT v2/`knowledge_key`. See `build_knowledge_pack.py`.
+- `content-convert.exe` (same dir) is only for Beta 24 → 25 tree migration; not needed for this repo.
+
 ### ESPFE
 
 The plugin (`WSN_SkyrimNet_Integration.esp`) is ESL-flagged (`0x200` header flag) and does not consume a load order slot.

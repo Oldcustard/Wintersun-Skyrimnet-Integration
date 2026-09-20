@@ -1,6 +1,6 @@
 {
   "skyrimnet_knowledge_pack": {
-    "format_version": 2,
+    "format_version": 3,
     "name": "Wintersun Deity Lore",
     "description": "Domain, tenets, and boons for all 51 Wintersun deities. Each entry is always-injected into the corresponding deity virtual NPC.",
     "version": "1.0.0",
@@ -12,7 +12,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Julianos",
-        "knowledge_key": "wsn_deity_0",
+        "key": "wsn_deity_0",
         "tags": [
           "wintersun",
           "deity"
@@ -27,7 +27,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Syrabane",
-        "knowledge_key": "wsn_deity_1",
+        "key": "wsn_deity_1",
         "tags": [
           "wintersun",
           "deity"
@@ -42,7 +42,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Magnus",
-        "knowledge_key": "wsn_deity_2",
+        "key": "wsn_deity_2",
         "tags": [
           "wintersun",
           "deity"
@@ -57,7 +57,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Jephre",
-        "knowledge_key": "wsn_deity_3",
+        "key": "wsn_deity_3",
         "tags": [
           "wintersun",
           "deity"
@@ -72,7 +72,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Mara",
-        "knowledge_key": "wsn_deity_4",
+        "key": "wsn_deity_4",
         "tags": [
           "wintersun",
           "deity"
@@ -87,7 +87,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Meridia",
-        "knowledge_key": "wsn_deity_5",
+        "key": "wsn_deity_5",
         "tags": [
           "wintersun",
           "deity"
@@ -102,7 +102,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Azura",
-        "knowledge_key": "wsn_deity_6",
+        "key": "wsn_deity_6",
         "tags": [
           "wintersun",
           "deity"
@@ -117,7 +117,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Talos",
-        "knowledge_key": "wsn_deity_7",
+        "key": "wsn_deity_7",
         "tags": [
           "wintersun",
           "deity"
@@ -132,7 +132,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Akatosh",
-        "knowledge_key": "wsn_deity_8",
+        "key": "wsn_deity_8",
         "tags": [
           "wintersun",
           "deity"
@@ -147,7 +147,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Dibella",
-        "knowledge_key": "wsn_deity_9",
+        "key": "wsn_deity_9",
         "tags": [
           "wintersun",
           "deity"
@@ -162,7 +162,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Phynaster",
-        "knowledge_key": "wsn_deity_10",
+        "key": "wsn_deity_10",
         "tags": [
           "wintersun",
           "deity"
@@ -177,7 +177,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Mehrunes Dagon",
-        "knowledge_key": "wsn_deity_11",
+        "key": "wsn_deity_11",
         "tags": [
           "wintersun",
           "deity"
@@ -192,7 +192,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Vaermina",
-        "knowledge_key": "wsn_deity_12",
+        "key": "wsn_deity_12",
         "tags": [
           "wintersun",
           "deity"
@@ -207,7 +207,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Zenithar",
-        "knowledge_key": "wsn_deity_13",
+        "key": "wsn_deity_13",
         "tags": [
           "wintersun",
           "deity"
@@ -222,7 +222,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Boethiah",
-        "knowledge_key": "wsn_deity_14",
+        "key": "wsn_deity_14",
         "tags": [
           "wintersun",
           "deity"
@@ -237,7 +237,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Nocturnal",
-        "knowledge_key": "wsn_deity_15",
+        "key": "wsn_deity_15",
         "tags": [
           "wintersun",
           "deity"
@@ -252,7 +252,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Molag Bal",
-        "knowledge_key": "wsn_deity_16",
+        "key": "wsn_deity_16",
         "tags": [
           "wintersun",
           "deity"
@@ -267,7 +267,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Kynareth",
-        "knowledge_key": "wsn_deity_17",
+        "key": "wsn_deity_17",
         "tags": [
           "wintersun",
           "deity"
@@ -282,7 +282,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Mephala",
-        "knowledge_key": "wsn_deity_18",
+        "key": "wsn_deity_18",
         "tags": [
           "wintersun",
           "deity"
@@ -297,7 +297,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Arkay",
-        "knowledge_key": "wsn_deity_19",
+        "key": "wsn_deity_19",
         "tags": [
           "wintersun",
           "deity"
@@ -312,7 +312,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Sanguine",
-        "knowledge_key": "wsn_deity_20",
+        "key": "wsn_deity_20",
         "tags": [
           "wintersun",
           "deity"
@@ -327,7 +327,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Malacath",
-        "knowledge_key": "wsn_deity_21",
+        "key": "wsn_deity_21",
         "tags": [
           "wintersun",
           "deity"
@@ -342,7 +342,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Stendarr",
-        "knowledge_key": "wsn_deity_22",
+        "key": "wsn_deity_22",
         "tags": [
           "wintersun",
           "deity"
@@ -357,7 +357,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Auriel",
-        "knowledge_key": "wsn_deity_23",
+        "key": "wsn_deity_23",
         "tags": [
           "wintersun",
           "deity"
@@ -372,7 +372,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Peryite",
-        "knowledge_key": "wsn_deity_24",
+        "key": "wsn_deity_24",
         "tags": [
           "wintersun",
           "deity"
@@ -387,7 +387,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Hircine",
-        "knowledge_key": "wsn_deity_25",
+        "key": "wsn_deity_25",
         "tags": [
           "wintersun",
           "deity"
@@ -402,7 +402,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Xarxes",
-        "knowledge_key": "wsn_deity_26",
+        "key": "wsn_deity_26",
         "tags": [
           "wintersun",
           "deity"
@@ -417,7 +417,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Shor",
-        "knowledge_key": "wsn_deity_27",
+        "key": "wsn_deity_27",
         "tags": [
           "wintersun",
           "deity"
@@ -432,7 +432,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Hermaeus Mora",
-        "knowledge_key": "wsn_deity_28",
+        "key": "wsn_deity_28",
         "tags": [
           "wintersun",
           "deity"
@@ -447,7 +447,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Clavicus Vile",
-        "knowledge_key": "wsn_deity_29",
+        "key": "wsn_deity_29",
         "tags": [
           "wintersun",
           "deity"
@@ -462,7 +462,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Namira",
-        "knowledge_key": "wsn_deity_30",
+        "key": "wsn_deity_30",
         "tags": [
           "wintersun",
           "deity"
@@ -477,7 +477,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Jyggalag",
-        "knowledge_key": "wsn_deity_31",
+        "key": "wsn_deity_31",
         "tags": [
           "wintersun",
           "deity"
@@ -492,7 +492,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Trinimac",
-        "knowledge_key": "wsn_deity_32",
+        "key": "wsn_deity_32",
         "tags": [
           "wintersun",
           "deity"
@@ -507,7 +507,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Sheogorath",
-        "knowledge_key": "wsn_deity_33",
+        "key": "wsn_deity_33",
         "tags": [
           "wintersun",
           "deity"
@@ -522,7 +522,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Sithis",
-        "knowledge_key": "wsn_deity_34",
+        "key": "wsn_deity_34",
         "tags": [
           "wintersun",
           "deity"
@@ -537,7 +537,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Z'en",
-        "knowledge_key": "wsn_deity_35",
+        "key": "wsn_deity_35",
         "tags": [
           "wintersun",
           "deity"
@@ -552,7 +552,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Satakal",
-        "knowledge_key": "wsn_deity_36",
+        "key": "wsn_deity_36",
         "tags": [
           "wintersun",
           "deity"
@@ -567,7 +567,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Tall Papa",
-        "knowledge_key": "wsn_deity_37",
+        "key": "wsn_deity_37",
         "tags": [
           "wintersun",
           "deity"
@@ -582,7 +582,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN the HoonDing",
-        "knowledge_key": "wsn_deity_38",
+        "key": "wsn_deity_38",
         "tags": [
           "wintersun",
           "deity"
@@ -597,7 +597,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN the Animal Gods",
-        "knowledge_key": "wsn_deity_40",
+        "key": "wsn_deity_40",
         "tags": [
           "wintersun",
           "deity"
@@ -612,7 +612,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Baan Dar",
-        "knowledge_key": "wsn_deity_41",
+        "key": "wsn_deity_41",
         "tags": [
           "wintersun",
           "deity"
@@ -627,7 +627,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Ebonarm",
-        "knowledge_key": "wsn_deity_42",
+        "key": "wsn_deity_42",
         "tags": [
           "wintersun",
           "deity"
@@ -642,7 +642,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Rajhin",
-        "knowledge_key": "wsn_deity_43",
+        "key": "wsn_deity_43",
         "tags": [
           "wintersun",
           "deity"
@@ -657,7 +657,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Riddle'Thar",
-        "knowledge_key": "wsn_deity_44",
+        "key": "wsn_deity_44",
         "tags": [
           "wintersun",
           "deity"
@@ -672,7 +672,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Morwha",
-        "knowledge_key": "wsn_deity_45",
+        "key": "wsn_deity_45",
         "tags": [
           "wintersun",
           "deity"
@@ -687,7 +687,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Leki",
-        "knowledge_key": "wsn_deity_46",
+        "key": "wsn_deity_46",
         "tags": [
           "wintersun",
           "deity"
@@ -702,7 +702,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN the Hist",
-        "knowledge_key": "wsn_deity_47",
+        "key": "wsn_deity_47",
         "tags": [
           "wintersun",
           "deity"
@@ -717,7 +717,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN St. Alessia",
-        "knowledge_key": "wsn_deity_48",
+        "key": "wsn_deity_48",
         "tags": [
           "wintersun",
           "deity"
@@ -732,7 +732,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN Mannimarco",
-        "knowledge_key": "wsn_deity_49",
+        "key": "wsn_deity_49",
         "tags": [
           "wintersun",
           "deity"
@@ -747,7 +747,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN the All-Maker",
-        "knowledge_key": "wsn_deity_50",
+        "key": "wsn_deity_50",
         "tags": [
           "wintersun",
           "deity"
@@ -762,7 +762,7 @@
         "always_inject": true,
         "importance": 0.9,
         "display_name": "WSN the Magna-Ge",
-        "knowledge_key": "wsn_deity_51",
+        "key": "wsn_deity_51",
         "tags": [
           "wintersun",
           "deity"

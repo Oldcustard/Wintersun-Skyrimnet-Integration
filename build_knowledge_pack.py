@@ -168,7 +168,7 @@ for wid, name, domain, tenets, boons in deities:
         "always_inject": True,
         "importance": 0.9,
         "display_name": f"WSN {name}",
-        "knowledge_key": f"wsn_deity_{wid}",
+        "key": f"wsn_deity_{wid}",
         "tags": ["wintersun", "deity"],
         "type": "KNOWLEDGE",
         "emotion": "",
@@ -177,7 +177,7 @@ for wid, name, domain, tenets, boons in deities:
 
 pack = {
     "skyrimnet_knowledge_pack": {
-        "format_version": 2,
+        "format_version": 3,
         "name": "Wintersun Deity Lore",
         "description": "Domain, tenets, and boons for all 51 Wintersun deities. Each entry is always-injected into the corresponding deity virtual NPC.",
         "version": "1.0.0",
